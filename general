@@ -1,0 +1,60 @@
+# Sur l'architecture des disques
+
+## Le MBR je pense que j'ai bien compris
+
+Le MBR est le premier secteur de 512 octets (LBA 0 - pour le moment encore les secteur de disques sont tous de 512 octets)
+Il contient la table de partitionnement qui précise notemment quelle partition est bootable.
+Ce MBR contient aussi un peu de code du bootloader (donc un peu de code de GRUB) mais il n'y a pas assez de place pour mettre 
+tout le code nécessaire à la compréhension d'un systeme de fichier.
+Donc ensuite l'ordi lit :
+- soit une partition qui na pas de file systeme mais du code binaire direct (j'ai jamais vu cela mais il parait que cela existe)
+- soit la zone morte avant le block 64 (donc jusqu'au block 63) qui elle peut etre suffisant pour décrire comment comprendre un systeme de fichier
+...et ca peut etre directement du ext4.
+
+Donc sur un systeme BIOS-MBR, le code de GRUB qui sert au démarrage est dans le MBR et dans la dead zone.
+
+Ensuite le dossier /boot (qui peut etre soit un simple dossier de / soit une patition séparée- qui peut etre ext4)
+Ce dossier boot en fait contient le cfg de grub.
+Mais lorsqu'on utilise la command linux pour déployer ce cfg ca ecrase bien dans le MBR et dans la zone morte!
+
+## Le GPT
+
+Un PC n'ayant pas de BIOS mais suivant la norme UEFI peut lire un disque uniquement formaté avec un MBR (un vieux disque donc). il va le lire comme a l'ancienne.
+Mais un PC Bios qui lit un disque GPT va rencontrer un MBR protecteur qui ndiquera une seule grosse partition, il va rien comprendre et ne pourra pas booter.
+
+Sur un disaue GPT, le MBR existe toujours, mais il donne comme partition active la partition "EFI".
+
+Le GPT qui contient la table de partitionnement se trouve entre le block 1 et le block 33. Après il y a les partitions.
+Le GPT est répété à la toute fin du disque.
+Le GPT va indiqué les Partitions qui sont flagé ESP. Ceux sont des partitions de boot.
+
+Les partitions ESP doivent etre en FAT. Le firmwaure UEFI comprend le FAT32 (il se trouve sur une EPROOM de taille bien plus grosse que ce qu'on faisait du temps du BIOS.
+Du coup il y a la place pour mettre de quoi comprendre un FS FAT32.
+
+Inutile d'apprendre LVM et les partitions logiques. Avec l'UEFI il n'y a plus de restrictions, on fait autant de partition primaires qu'on veut.
+
+
+# Sur l'installation de linux et sa sauvegarde
+
+J'ai l'impression que les installateurs depuis une version live prennent en compte si l'ordi est BIOS ou UEFI. Donc l'idéal est de faire l'installation depuis l'ordi 
+ou on utilisera ce linux.
+
+Inutile de se prendre la tete a faire un partitionnement compliqué pour un ordi perso. Une partition / qui contient tout (y compris home et boot).
+De toute façon, il y a pas mal d'extensions (libreoffice, mozilla) et de fichier de reglages (gpg, vim, ssh...) qui vont se mettre en fichier cachés dans home.
+Donc on peut dire que home n'est pas vraument indépendant de ce qu'on fait dans /.
+La partition boot separé ? A quoi bon si on fait des sauvegarde compl_ètes du disque régulières avec clonezilla.
+
+il vaut mieux avoir une clé clonezilla et sauvegarder le disque entier du PC.
+Clonezilla en afit sauve le MBR et les partitions une a une.
+Je ne sais pas si la zone morte est sauvé sur un disque MS-DOS/MBR simple.
+
+# Sur XFCE
+
+faire que lorsqu'on se connecte avec un compte utilisateur il ne demande plus si on veut reprendre la sessions précedente de cet utilisateur ou une nouvelle session :
+Paramètre - Edition de paramètres - XFCE4 session - Chooser - Always display : décocher
+
+
+
+
+
+
