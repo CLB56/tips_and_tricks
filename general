@@ -56,6 +56,16 @@ On peut donc sauvegarder sur un support beaucoup plus petit.
 faire que lorsqu'on se connecte avec un compte utilisateur il ne demande plus si on veut reprendre la sessions précedente de cet utilisateur ou une nouvelle session :
 Paramètre - Edition de paramètres - XFCE4 session - Chooser - Always display : décocher
 
+Theme windows 10 :
+git clone https://github.com/B00merang-Project/Windows-10.git
+sudo mv Windows-10 /usr/share/themes/
+On va dans parametre apparences et on peut choisir le theme.
+wget https://github.com/B00merang-Project/Windows-10/archive/3.2.zip
+unzip $(ls)
+sudo mv Windows-10-3.2 /usr/share/icons
+
+
+
 
 
 
