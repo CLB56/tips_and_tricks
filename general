@@ -47,6 +47,9 @@ La partition boot separé ? A quoi bon si on fait des sauvegarde compl_ètes du 
 il vaut mieux avoir une clé clonezilla et sauvegarder le disque entier du PC.
 Clonezilla en afit sauve le MBR et les partitions une a une.
 Je ne sais pas si la zone morte est sauvé sur un disque MS-DOS/MBR simple.
+Par contre un disaue de 250 GO a sauver ca ne fera pas une sauvegarde de 250Go. Le systeme est intélligent et si le disque n'est pas plein, clonezilla le comprend.
+On peut donc sauvegarder sur un support beaucoup plus petit.
+
 
 # Sur XFCE
 
