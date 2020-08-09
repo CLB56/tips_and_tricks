@@ -56,6 +56,23 @@ On peut donc sauvegarder sur un support beaucoup plus petit.
 faire que lorsqu'on se connecte avec un compte utilisateur il ne demande plus si on veut reprendre la sessions précedente de cet utilisateur ou une nouvelle session :
 Paramètre - Edition de paramètres - XFCE4 session - Chooser - Always display : décocher
 
+Pour se mettre en autologin :
+- la résolution on peut la changer via l'interface graphique (ce ne sera valable que pour ce compte utilisateur)
+
+il faut éditer : /etc/lightdm/lightdm.conf
+Dans la section [Seat:*] il faut décommenter juset cette ligne
+autologin-user=username (ici mettre son nom de compte)
+
+puis on se rajoute au groupe auto-login et un truc compliqué (qui serait lié au PAM...c'est bien pour rentrer un MDP en automatique)
+groupadd -r autologin
+gpasswd -a username autologin
+
+Ensuite si on ne veut pas que le systeme se souvienne des fenetre ouverte lors de la précdente session, on peut le faire via le GUI : 
+Open Session and Startup from Menu - > Settings -> Settings Manager.
+Untick the Automatically save sessions on logout under Logout Settings
+
+J'ai pas testé encore
+
 Theme windows 10 :
 git clone https://github.com/B00merang-Project/Windows-10.git
 sudo mv Windows-10 /usr/share/themes/
