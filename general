@@ -15,6 +15,8 @@ Donc sur un systeme BIOS-MBR, le code de GRUB qui sert au démarrage est dans le
 
 Ensuite le dossier /boot (qui peut etre soit un simple dossier de / soit une patition séparée- qui peut etre ext4)
 Ce dossier boot en fait contient le cfg de grub.
+grub lit ce fihcier de configuration.
+Mais attention sous linux apres une modification du cfg on peut assi utilser une commande pour venir ecrire dans le MBR et la deadzone.
 Mais lorsqu'on utilise la command linux pour déployer ce cfg ca ecrase bien dans le MBR et dans la zone morte!
 
 ## Le GPT
