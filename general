@@ -84,6 +84,19 @@ unzip $(ls)
 sudo mv Windows-10-3.2 /usr/share/icons
 
 
+# Essayer de faire une clé usb bootable
+
+Le MBR c'est le premier secteur du disque.
+Il contient la table de partitionnement : 4 partitions primaires  et je pesne aussi l'identifiant de la partition
+Il contient un bootstrap code
+
+LE Volume ou Partition Boot Record sur le premier secteur de la partition :
+The code in volume boot records is invoked either directly by the machine's firmware or indirectly by code in the master boot record or a boot manager. 
+Il contient du code de bootstrap
+Il contient aussi le  BIOS Parameter Block  et je ne sais pas si ces parametres (utile uniquement sur un partition FAT) ne permettent pas de trouver le grub.cfg !
+Je ne suis pas sur de moi ici.
+
+
 
 
 
