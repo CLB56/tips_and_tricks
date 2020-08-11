@@ -122,6 +122,10 @@ On charge le noyaux :
 grub> linux /vmlinuz root=/dev/sda2 (mais ici je ne comprends pas d'ou viend le /dev/sda2 et pourquoi cela)
 On charge le RAMFS : 
 grub> initrd /initrd.img
+finalement, on boote : 
+grub> boot
+
+
  
 
 
