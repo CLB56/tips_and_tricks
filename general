@@ -96,6 +96,16 @@ Il contient du code de bootstrap
 Il contient aussi le  BIOS Parameter Block  et je ne sais pas si ces parametres (utile uniquement sur un partition FAT) ne permettent pas de trouver le grub.cfg !
 Je ne suis pas sur de moi ici.
 
+Finalement je me rend compte qu'il faut utiliser syslinux qui est variment spécialé pour cela.
+Sur un disque msdos tout me laisse à penser que tout le code de bootloading est dans le MBR et dans la zone morte.
+Sur un disque uefi, c'est bien different et c'est mis dans la partition GPT.
+
+Syslinux a plusieurs moyen d'identifier le disque :
+
+Le partition name : il est dans la table de partition que ce soit un disque msdos ou uefi
+Le partition label : Sur un disqque msdos ce nom ne figure que dans la filesystem de la partition ...En uefi ce label se trouverait (en plus) dans la table de 
+partition GPT.
+L'UUID serait aussi dans le filesystem. (a voir si sur un GPT on ne le retrouve pas dedans aussi mais ce serait en bonus)
 
 
 
