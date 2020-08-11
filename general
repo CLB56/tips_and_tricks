@@ -112,6 +112,18 @@ L'UUID serait aussi dans le filesystem sur une partition GPT il est aussi stock�
 https://blog.sleeplessbeastie.eu/2015/12/07/how-to-create-bootable-usb-flash-drive/
 Très bon site mais c'est pour lancer des iso après.
 Mais l'idée est bonne.
+Excellent site !! la procédure décrite marche!!
+
+Tentative de chargement manuel avec Grub 2.04 :
+
+On se positionne sur la bonne partition (qu'on a découverte avec la commande ls)
+grub> root=(hd0,msdos1)
+On charge le noyaux : 
+grub> linux /vmlinuz root=/dev/sda2 (mais ici je ne comprends pas d'ou viend le /dev/sda2 et pourquoi cela)
+On charge le RAMFS : 
+grub> initrd /initrd.img
+ 
+
 
 
 
