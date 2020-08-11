@@ -109,7 +109,9 @@ partition GPT. Mais une fois encore je pense que c'est que le label qui est dans
 differentes pour chaque filesystem.
 L'UUID serait aussi dans le filesystem sur une partition GPT il est aussi stocké dans le GPT mais linux ne s'en sert pas.(a voir si sur un GPT on ne le retrouve pas dedans aussi mais ce serait en bonus)
 
-
+https://blog.sleeplessbeastie.eu/2015/12/07/how-to-create-bootable-usb-flash-drive/
+Très bon site mais c'est pour lancer des iso après.
+Mais l'idée est bonne.
 
 
 
