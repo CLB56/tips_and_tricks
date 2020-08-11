@@ -112,7 +112,7 @@ L'UUID serait aussi dans le filesystem sur une partition GPT il est aussi stock�
 https://blog.sleeplessbeastie.eu/2015/12/07/how-to-create-bootable-usb-flash-drive/
 Très bon site mais c'est pour lancer des iso après.
 Mais l'idée est bonne.
-Excellent site !! la procédure décrite marche!!
+Excellent site !! la procédure décrite marche!! Mais je n'ai pas encore fait la configuration à l'étape finale.
 
 Tentative de chargement manuel avec Grub 2.04 :
 
