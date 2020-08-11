@@ -102,10 +102,12 @@ Sur un disque uefi, c'est bien different et c'est mis dans la partition GPT.
 
 Syslinux a plusieurs moyen d'identifier le disque :
 
-Le partition name : il est dans la table de partition que ce soit un disque msdos ou uefi
+Le partition name : il est dans la table de partition que ce soit un disque msdos ou uefi. J'ai l'impression que le partition name c'est juste sda1, sdb3, ... et donc
+ca me parait peu fiable car le BIOS changes la lettre selon l'ordre dans lequel il detecte.
 Le partition label : Sur un disqque msdos ce nom ne figure que dans la filesystem de la partition ...En uefi ce label se trouverait (en plus) dans la table de 
-partition GPT.
-L'UUID serait aussi dans le filesystem. (a voir si sur un GPT on ne le retrouve pas dedans aussi mais ce serait en bonus)
+partition GPT. Mais une fois encore je pense que c'est que le label qui est dans le filesystem qui est utile. D'ailleurs pour le changer ne ligne de commande, il y a des commandes
+differentes pour chaque filesystem.
+L'UUID serait aussi dans le filesystem sur une partition GPT il est aussi stocké dans le GPT mais linux ne s'en sert pas.(a voir si sur un GPT on ne le retrouve pas dedans aussi mais ce serait en bonus)
 
 
 
