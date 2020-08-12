@@ -133,5 +133,16 @@ pour le verifier j'ai utilsé une technique simple mais robuste : j'ai fait un s
 La version de grub tel que ur le Thinkpad (c'est a dire juste le MBR et la deadzone) est bien capable de comprendre l'ext4 car losque je fais un ls (hd0,msdos1)
 Elle comprend ce qui se passe.
 
+sudo parted -l
+
+-------------------------------------
+
+Je pense qu'il faut bien copier le bootstrap du MBR classique (MBR.bin comme dans le site web)
+C'est un code générique qui en semble pas dépendre de syslinux.
+
+Ceci dit quand on install syslinux, cela modifie le MBR (pourquoi alors ?) et cela colle le fichier LDLINUX.SYS qui semble contenir le code de bootstrap 
+
+
+
 
 
