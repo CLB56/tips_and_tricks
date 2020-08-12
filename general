@@ -144,7 +144,24 @@ Ceci dit quand on install syslinux, cela modifie le MBR (pourquoi alors ?) et ce
 
 Il faut bien coller le MBR.bin avant de faire l'installation sinon on a un message d'érreur.
 
+grub> ls
 
+(hd0) (hd0,msdos2) (hd0,msdos1)
+
+All of our partitions are showing up here (yours may look slightly different, depending on how things are partitioned). Since it can see our boot volume, let's actually tell it to use that:
+grub> root=(hd0,msdos1)
+
+Now we can tell it to load or kernel image. (Just note that you must put in the full filename of the image. You can use TAB completion here to help you, especially if you don't remember the name of the file.)
+grub> linux /vmlinuz root=/dev/sda2
+
+Next, we need to tell the kernel where it can find it's initialization RAM disk (initrd). Remember to use TAB completion to help you:
+grub> initrd /initrd.img
+
+Finally, you can go ahead and boot your system!
+grub> boot
+
+Cette procédure boot sur linux depuis le grub de clonezilla mais : écran de connexion au démarrage bien foireux + pas de wifi.
+Il faut bien préciser la partition !!!!
 
 
 
