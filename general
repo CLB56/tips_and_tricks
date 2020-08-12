@@ -142,6 +142,8 @@ C'est un code générique qui en semble pas dépendre de syslinux.
 
 Ceci dit quand on install syslinux, cela modifie le MBR (pourquoi alors ?) et cela colle le fichier LDLINUX.SYS qui semble contenir le code de bootstrap 
 
+Il faut bien coller le MBR.bin avant de faire l'installation sinon on a un message d'érreur.
+
 
 
 
