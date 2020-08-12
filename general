@@ -125,11 +125,13 @@ grub> initrd /initrd.img
 finalement, on boote : 
 grub> boot
 
+Deuxieme jour à galerer
 
- 
+apparemmet mes liens symboliques étaient cassés cd de vmlinuz et initrd qui sont à la racines.
+pour le verifier j'ai utilsé une technique simple mais robuste : j'ai fait un sha1sum du fichier cible et du lien. Si c'est pas le même résiltat alors il ya  problème.
 
-
-
+La version de grub tel que ur le Thinkpad (c'est a dire juste le MBR et la deadzone) est bien capable de comprendre l'ext4 car losque je fais un ls (hd0,msdos1)
+Elle comprend ce qui se passe.
 
 
 
