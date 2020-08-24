@@ -100,10 +100,15 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 t: Open the selected file in a new tab
+
 i: Open the selected file in a horizontal split window
+
 s: Open the selected file in a vertical split window
+
 I: Toggle hidden files
+
 m: Show the NERD Tree menu
+
 
 
 - For navigation between tabs and windows : 
@@ -112,10 +117,18 @@ To navigate between windows
 Ctrl+W and then the arrow keys.
 
 To navigate between tabs :
+
 :tabn         go to next tab
+
+
 :tabp         go to previous tab
+
+
 :tabfirst     go to first tab
+
+
 :tablast      go to last tab
+
 
 
 
