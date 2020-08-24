@@ -104,11 +104,14 @@ s: Open the selected file in a vertical split window
 I: Toggle hidden files
 
 
-- For navigation between tabs and windows : 
+- For navigation between tabs and windows management : 
 
 To navigate between windows
 
 Ctrl+W and then the arrow keys.
+Ctrl+W +/-: increase/decrease height (play with figures to do big changes)
+Ctrl+W >/<: increase/decrease width (play with figures to do big changes)
+
 
 To navigate between tabs :
 
