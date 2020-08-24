@@ -92,3 +92,10 @@ grub> boot
 - In VIM, with this command :packadd {name} it's possible to activate the plugins located in opt folder
 
 - Even if a plugin is well in the start folder, you have to edit the vimrc file and to add it "autocmd VimEnter * NERDTree"
+
+For vimrc for nerdtree : 
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+
+
