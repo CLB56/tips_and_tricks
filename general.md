@@ -66,52 +66,17 @@ Here are all tips and tricks and usefull information which were useful or me and
 
 - Doing a separate boot partition could be usefull if there is dual boot. But for simple boot it's usless and brings complexity.
 
-- Save the whole disk with Clonezilla, it will save the MBR (probably the dead zone also) and a partition of 250 Go will not create an image of 250 Go. It will do it cleverly and so if partiation is 5% use it will compress it very well.
+- Save the whole disk with Clonezilla, it will save the MBR (probably the dead zone also) and a partition of 250 Go will not create an image of 250 Go. It will do it cleverly and so if partiation is 5% use it will compress it very well. For recovery the computer will come **Exactly** back to the last backup. 
 
 - To launch linux in command line from grub i do that : 
-''' grub> linux /boot/vmlinuz root=/dev/sdb1
+~~~
+grub> linux /boot/vmlinuz root=/dev/sdb1
 grub> initrd /initrd.img
 grub> boot
-'''
+~~~
 
+*NB : It's very important to launch the right root which is incating the root partition / otherwise boot wil never work. Which sdxY to launch seems not predictable.*
 
-Deuxieme jour à galerer
+## About VIM Plugins
 
-apparemmet mes liens symboliques étaient cassés cd de vmlinuz et initrd qui sont à la racines.
-pour le verifier j'ai utilsé une technique simple mais robuste : j'ai fait un sha1sum du fichier cible et du lien. Si c'est pas le même résiltat alors il ya  problème.
-
-La version de grub tel que ur le Thinkpad (c'est a dire juste le MBR et la deadzone) est bien capable de comprendre l'ext4 car losque je fais un ls (hd0,msdos1)
-Elle comprend ce qui se passe.
-
-sudo parted -l
-
--------------------------------------
-
-Je pense qu'il faut bien copier le bootstrap du MBR classique (MBR.bin comme dans le site web)
-C'est un code générique qui en semble pas dépendre de syslinux.
-
-Ceci dit quand on install syslinux, cela modifie le MBR (pourquoi alors ?) et cela colle le fichier LDLINUX.SYS qui semble contenir le code de bootstrap 
-
-Il faut bien coller le MBR.bin avant de faire l'installation sinon on a un message d'érreur.
-
-grub> ls
-
-(hd0) (hd0,msdos2) (hd0,msdos1)
-
-All of our partitions are showing up here (yours may look slightly different, depending on how things are partitioned). Since it can see our boot volume, let's actually tell it to use that:
-grub> root=(hd0,msdos1)
-
-Now we can tell it to load or kernel image. (Just note that you must put in the full filename of the image. You can use TAB completion here to help you, especially if you don't remember the name of the file.)
-grub> linux /vmlinuz root=/dev/sda2
-
-Next, we need to tell the kernel where it can find it's initialization RAM disk (initrd). Remember to use TAB completion to help you:
-grub> initrd /initrd.img
-
-Finally, you can go ahead and boot your system!
-grub> boot
-
-Cette procédure boot sur linux depuis le grub de clonezilla mais : écran de connexion au démarrage bien foireux + pas de wifi.
-Il faut bien préciser la partition !!!!
-
-
-
+- I really recommend 
