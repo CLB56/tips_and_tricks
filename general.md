@@ -117,18 +117,15 @@ To navigate between tabs :
 \:tabp         go to previous tab
 
 \:tabfirst     go to first tab
+
 \:tablast      go to last tab
 
 
 Syntastic on dit oui : c'est un vérificateur de syntaxe qui met un point rouge ou jaune selon la graivté de la faute. Il couvre plein de langages.
-
-
-
-
-Interesting plugins but I will test them later : 
-- surround is a pluging to quicly change "" for '' or any other surrounding set of characters
-- Vimairline : C'est la barre de tache en bas. J'en vois pas beaucoup d'interet mais ca peut préciser le virtual environnement et ca peut dire dans quelle branche git on se trouve (en fait cela interagit avec un plugin pour les virten et un plugin "fugitive" pour une integration git)
-- vim-colors-solarized : C'est pour améliorer la coloration du texte. Mais la coloration par défaut de VIM est pas si mal.
+Youcompleteme : oui car ce sera utile pour le code completion 
+Surround is a pluging to quicly change "" for '' or any other surrounding set of characters
+Vimairline : C'est la barre de tache en bas. J'en vois pas beaucoup d'interet mais ca peut préciser le virtual environnement et ca peut dire dans quelle branche git on se trouve (en fait cela interagit avec un plugin pour les virten et un plugin "fugitive" pour une integration git)
+Vim-colors-solarized : C'est pour améliorer la coloration du texte. Mais la coloration par défaut de VIM est pas si mal.
 
 
 
