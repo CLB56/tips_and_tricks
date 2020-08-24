@@ -112,10 +112,10 @@ Ctrl+W and then the arrow keys.
 
 To navigate between tabs :
 
-:tabn         go to next tab
-:tabp         go to previous tab
-:tabfirst     go to first tab
-:tablast      go to last tab
+\:tabn         go to next tab
+\:tabp         go to previous tab
+\:tabfirst     go to first tab
+\:tablast      go to last tab
 
 Syntastic on dit oui : c'est un vérificateur de syntaxe qui met un point rouge ou jaune selon la graivté de la faute. Il couvre plein de langages.
 
