@@ -1,39 +1,59 @@
-# Sur l'architecture des disques
+# Introduction
 
-## Le MBR je pense que j'ai bien compris
+Here are all tips and tricks and usefull information which were useful or me and that could be hard to rememeber.
 
-Le MBR est le premier secteur de 512 octets (LBA 0 - pour le moment encore les secteur de disques sont tous de 512 octets)
-Il contient la table de partitionnement qui précise notemment quelle partition est bootable.
-Ce MBR contient aussi un peu de code du bootloader (donc un peu de code de GRUB) mais il n'y a pas assez de place pour mettre 
-tout le code nécessaire à la compréhension d'un systeme de fichier.
-Donc ensuite l'ordi lit :
-- soit une partition qui na pas de file systeme mais du code binaire direct (j'ai jamais vu cela mais il parait que cela existe)
-- soit la zone morte avant le block 64 (donc jusqu'au block 63) qui elle peut etre suffisant pour décrire comment comprendre un systeme de fichier
-...et ca peut etre directement du ext4.
+## About disk architecture
 
-Donc sur un systeme BIOS-MBR, le code de GRUB qui sert au démarrage est dans le MBR et dans la dead zone.
+### The MS-DOS or MBR partitionning
 
-Ensuite le dossier /boot (qui peut etre soit un simple dossier de / soit une patition séparée- qui peut etre ext4)
-Ce dossier boot en fait contient le cfg de grub.
-grub lit ce fihcier de configuration.
-Mais attention sous linux apres une modification du cfg on peut assi utilser une commande pour venir ecrire dans le MBR et la deadzone.
-Mais lorsqu'on utilise la command linux pour déployer ce cfg ca ecrase bien dans le MBR et dans la zone morte!
+- The first sector of each disk is called the MBR.
+- Up to know, sectors are still 512 bytes. It could change in the future.(i think the initiative would be at disk firmware level)
+- The first sector is the LBA0.
 
-## Le GPT
+*NB : In 2020, we can now forget the Cylinder / Head / Sector for physical adressing and use the LBA system which is more simple)*
 
-Un PC n'ayant pas de BIOS mais suivant la norme UEFI peut lire un disque uniquement formaté avec un MBR (un vieux disque donc). il va le lire comme a l'ancienne.
-Mais un PC Bios qui lit un disque GPT va rencontrer un MBR protecteur qui ndiquera une seule grosse partition, il va rien comprendre et ne pourra pas booter.
+- Thre are different standard for the MBR but the physical address of the partition table is always the same.
+- Partition table can describe more than 4 partitions.
 
-Sur un disaue GPT, le MBR existe toujours, mais il donne comme partition active la partition "EFI".
+*NB : In Linux workd to bypass this limitation, we used to use logical partitions...But in 2020 we can forget about that as GPT as replaced MBR. With GPT there is still limitation...but the number of partiations that can be created is huge.*
 
-Le GPT qui contient la table de partitionnement se trouve entre le block 1 et le block 33. Après il y a les partitions.
-Le GPT est répété à la toute fin du disque.
-Le GPT va indiqué les Partitions qui sont flagé ESP. Ceux sont des partitions de boot.
+- It's in the partition table that is indicated which partiation is bootable. Only one partition can be bootable.
+- The MBR will also record a bootstrap code (Grub, SysLinux...)
 
-Les partitions ESP doivent etre en FAT. Le firmwaure UEFI comprend le FAT32 (il se trouve sur une EPROOM de taille bien plus grosse que ce qu'on faisait du temps du BIOS.
-Du coup il y a la place pour mettre de quoi comprendre un FS FAT32.
+*NB : It's possible to modify precisely only this boutstrap code with the dd command counting the number of bytes till the beginning of partition table.*
 
-Inutile d'apprendre LVM et les partitions logiques. Avec l'UEFI il n'y a plus de restrictions, on fait autant de partition primaires qu'on veut.
+### Booting with an MBR disk
+
+- Bootstrap code is in the MBR.
+
+- With Grub, additionnal bootstrap code is recorded after the MBR and before the block 63. This is enough to get Grub fully installed on a disk. 
+
+- For historical reasons the first partitin can't start earlier than block 64.
+
+* NB : This additionnal code in the "dead zone" is enough to make Grub understanding some commone filesystems (FAT and Ext4) *
+
+- But Grub will try to reach and read a grub.cfg file. This is a txt file that will indicate him where to boot, which choice (kernel version, initrd, kernel parameters to propose). If Grub can't reach it, it will directly propose the command line interface
+
+* NB : This grub.cfg file is located /boot/grub on ubuntu. As editing it is quite hard there is a special linux command for it. This command not only will affect the /boot/grub/grub.cfg file but will also modify the MBR and the dead zone. That's why using this command is much much safer. *
+
+- It seems it can happen that there is also additionnal bootstrap code in the VBR but i don't think Grub use it.
+
+* NB :  VBR for Volume Boot Record is the first sector of each primary partition. I think this is wehre is recorded the label of the partition. *
+
+### The GPT - UEFI - ESP partitioning and booting
+
+- This partitionning can be undertood only by a computer which has a real UEFI chipset
+
+* NB : We can consider that the BIOS or UEFI is like an EEPROM that is flasheable. BIOS EEPROM was very tiny (1970 - 1980) *
+
+- The GPT is also at the beginning of the disk...But the first sector is an MBR describing one big partition.
+- UEFI computers can read and boot MBR and GPT disks but BIOS computers can't boot on GPT disks.
+- The GPT is recorded two times : at the beginning of the disk and at the end (for safety reasons i suppose)
+- the EEPROM for UEFI is big enough to store the code to understand FAT partition. 
+- It makes booting much more simple : The code of the UEFI -> The GPT table -> The ESP partition which is using FAT filesystem
+- The ESP partition must be well declared  ("flagged")as ESP partition in the GPT table.
+
+- For now, we still often use a bootloader (Grub for example). So the ESP partition is used to load GRUB. But it would be possible to put in this ESP partition the linux kernel and initrd and to directly launch linux without bootloader.
 
 
 # Sur l'installation de linux et sa sauvegarde
