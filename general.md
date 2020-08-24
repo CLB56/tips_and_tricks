@@ -2,9 +2,9 @@
 
 Here are all tips and tricks and usefull information which were useful or me and that could be hard to rememeber.
 
-## About disk architecture
+# About disk architecture
 
-### The MS-DOS or MBR partitionning
+## The MS-DOS or MBR partitionning
 
 - The first sector of each disk is called the MBR.
 - Up to know, sectors are still 512 bytes. It could change in the future.(i think the initiative would be at disk firmware level)
@@ -22,7 +22,7 @@ Here are all tips and tricks and usefull information which were useful or me and
 
 *NB : It's possible to modify precisely only this boutstrap code with the dd command counting the number of bytes till the beginning of partition table.*
 
-### Booting with an MBR disk
+## Booting with an MBR disk
 
 - Bootstrap code is in the MBR.
 
@@ -38,9 +38,9 @@ Here are all tips and tricks and usefull information which were useful or me and
 
 - It seems it can happen that there is also additionnal bootstrap code in the VBR but i don't think Grub use it.
 
-* NB :  VBR for Volume Boot Record is the first sector of each primary partition. I think this is wehre is recorded the label of the partition. *
+* NB :  VBR for Volume Boot Record is the first sector of each primary partition. I think this is where is recorded the label of the partition. *
 
-### The GPT - UEFI - ESP partitioning and booting
+## The GPT - UEFI - ESP partitioning and booting
 
 - This partitionning can be undertood only by a computer which has a real UEFI chipset
 
@@ -56,94 +56,24 @@ Here are all tips and tricks and usefull information which were useful or me and
 - For now, we still often use a bootloader (Grub for example). So the ESP partition is used to load GRUB. But it would be possible to put in this ESP partition the linux kernel and initrd and to directly launch linux without bootloader.
 
 
-# Sur l'installation de linux et sa sauvegarde
+## About installing and saving linux configuration
 
-J'ai l'impression que les installateurs depuis une version live prennent en compte si l'ordi est BIOS ou UEFI. Donc l'idéal est de faire l'installation depuis l'ordi 
-ou on utilisera ce linux.
+- To install an \*.iso image of linux, a simple dd (to sdx not to sdx1 or sdx2!!) command is enough. The iso image is the heritage of CDROM. So it puts this CDROM directly on the USB key and it can boot on it.
 
-Inutile de se prendre la tete a faire un partitionnement compliqué pour un ordi perso. Une partition / qui contient tout (y compris home et boot).
-De toute façon, il y a pas mal d'extensions (libreoffice, mozilla) et de fichier de reglages (gpg, vim, ssh...) qui vont se mettre en fichier cachés dans home.
-Donc on peut dire que home n'est pas vraument indépendant de ce qu'on fait dans /.
-La partition boot separé ? A quoi bon si on fait des sauvegarde compl_ètes du disque régulières avec clonezilla.
+- They best way is always to use these "live and install" distributions.
 
-il vaut mieux avoir une clé clonezilla et sauvegarder le disque entier du PC.
-Clonezilla en afit sauve le MBR et les partitions une a une.
-Je ne sais pas si la zone morte est sauvé sur un disque MS-DOS/MBR simple.
-Par contre un disaue de 250 GO a sauver ca ne fera pas une sauvegarde de 250Go. Le systeme est intélligent et si le disque n'est pas plein, clonezilla le comprend.
-On peut donc sauvegarder sur un support beaucoup plus petit.
+- Doing a separate partition for home is not a good idea. Firefox extensions, Vim extensions, gpg keys, many configuration files of the applications will record configuratin files in the home partition...And when you reinstall linux, many of these configuration files could be just useless and bring the mess.
 
+- Doing a separate boot partition could be usefull if there is dual boot. But for simple boot it's usless and brings complexity.
 
-# Sur XFCE
+- Save the whole disk with Clonezilla, it will save the MBR (probably the dead zone also) and a partition of 250 Go will not create an image of 250 Go. It will do it cleverly and so if partiation is 5% use it will compress it very well.
 
-faire que lorsqu'on se connecte avec un compte utilisateur il ne demande plus si on veut reprendre la sessions précedente de cet utilisateur ou une nouvelle session :
-Paramètre - Edition de paramètres - XFCE4 session - Chooser - Always display : décocher
-
-Pour se mettre en autologin :
-- la résolution on peut la changer via l'interface graphique (ce ne sera valable que pour ce compte utilisateur)
-
-il faut éditer : /etc/lightdm/lightdm.conf
-Dans la section [Seat:*] il faut décommenter juset cette ligne
-autologin-user=username (ici mettre son nom de compte)
-
-puis on se rajoute au groupe auto-login et un truc compliqué (qui serait lié au PAM...c'est bien pour rentrer un MDP en automatique)
-groupadd -r autologin
-gpasswd -a username autologin
-
-Ensuite si on ne veut pas que le systeme se souvienne des fenetre ouverte lors de la précdente session, on peut le faire via le GUI : 
-Open Session and Startup from Menu - > Settings -> Settings Manager.
-Untick the Automatically save sessions on logout under Logout Settings
-
-J'ai pas testé encore
-
-Theme windows 10 :
-git clone https://github.com/B00merang-Project/Windows-10.git
-sudo mv Windows-10 /usr/share/themes/
-On va dans parametre apparences et on peut choisir le theme.
-wget https://github.com/B00merang-Project/Windows-10/archive/3.2.zip
-unzip $(ls)
-sudo mv Windows-10-3.2 /usr/share/icons
-
-
-# Essayer de faire une clé usb bootable
-
-Le MBR c'est le premier secteur du disque.
-Il contient la table de partitionnement : 4 partitions primaires  et pour chaque partition l'identifiant du systeme de fichier (code hexa standradisé)
-Il contient un bootstrap code
-
-LE Volume ou Partition Boot Record sur le premier secteur de la partition :
-The code in volume boot records is invoked either directly by the machine's firmware or indirectly by code in the master boot record or a boot manager. 
-Il contient du code de bootstrap
-Il contient aussi le  BIOS Parameter Block  et je ne sais pas si ces parametres (utile uniquement sur un partition FAT) ne permettent pas de trouver le grub.cfg !
-Je ne suis pas sur de moi ici.
-
-Finalement je me rend compte qu'il faut utiliser syslinux qui est variment spécialé pour cela.
-Sur un disque msdos tout me laisse à penser que tout le code de bootloading est dans le MBR et dans la zone morte.
-Sur un disque uefi, c'est bien different et c'est mis dans la partition GPT.
-
-Syslinux a plusieurs moyen d'identifier le disque :
-
-Le partition name : il est dans la table de partition que ce soit un disque msdos ou uefi. J'ai l'impression que le partition name c'est juste sda1, sdb3, ... et donc
-ca me parait peu fiable car le BIOS changes la lettre selon l'ordre dans lequel il detecte.
-Le partition label : Sur un disqque msdos ce nom ne figure que dans la filesystem de la partition ...En uefi ce label se trouverait (en plus) dans la table de 
-partition GPT. Mais une fois encore je pense que c'est que le label qui est dans le filesystem qui est utile. D'ailleurs pour le changer ne ligne de commande, il y a des commandes
-differentes pour chaque filesystem.
-L'UUID serait aussi dans le filesystem sur une partition GPT il est aussi stocké dans le GPT mais linux ne s'en sert pas.(a voir si sur un GPT on ne le retrouve pas dedans aussi mais ce serait en bonus)
-
-https://blog.sleeplessbeastie.eu/2015/12/07/how-to-create-bootable-usb-flash-drive/
-Très bon site mais c'est pour lancer des iso après.
-Mais l'idée est bonne.
-Excellent site !! la procédure décrite marche!! Mais je n'ai pas encore fait la configuration à l'étape finale.
-
-Tentative de chargement manuel avec Grub 2.04 :
-
-On se positionne sur la bonne partition (qu'on a découverte avec la commande ls)
-grub> root=(hd0,msdos1)
-On charge le noyaux : 
-grub> linux /vmlinuz root=/dev/sda2 (mais ici je ne comprends pas d'ou viend le /dev/sda2 et pourquoi cela)
-On charge le RAMFS : 
+- To launch linux in command line from grub i do that : 
+''' grub> linux /boot/vmlinuz root=/dev/sdb1
 grub> initrd /initrd.img
-finalement, on boote : 
 grub> boot
+'''
+
 
 Deuxieme jour à galerer
 
