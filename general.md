@@ -130,9 +130,13 @@ To navigate between tabs :
 
 :tablast      go to last tab
 
+Syntastic on dit oui : c'est un vérificateur de syntaxe qui met un point rouge ou jaune selon la graivté de la faute. Il couvre plein de langages.
+Vimairline : j'en vois pas trop l'interet mais on va dire oui
 
 
 
+Interesting plugins but I will test them later : 
+- surround is a pluging to quicly change "" for '' or any other surrounding set of characters
 
 
 
