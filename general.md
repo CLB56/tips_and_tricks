@@ -123,6 +123,7 @@ To navigate between tabs :
 
 \:tablast      go to last tab
 
+- NERDcommenter seems useless. If you want to comment several lines in one time there are some vim scripts (or regex i don't know) for that. for exemple 1,3s/^/# to comment the line 1 to 3 or :1,3s/^#/ to uncomment them.
 
 Syntastic on dit oui : c'est un vérificateur de syntaxe qui met un point rouge ou jaune selon la graivté de la faute. Il couvre plein de langages.
 Youcompleteme : oui car ce sera utile pour le code completion 
