@@ -97,7 +97,15 @@ For vimrc for nerdtree :
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
-To switch from a window to another one use Ctrl+W and then the arrow keys.
+To navigate between windows 
+Ctrl+W and then the arrow keys.
 
+to navigate between tabs :
+:tabn         go to next tab
+:tabp         go to previous tab
+:tabfirst     go to first tab
+:tablast      go to last tab
+
+In NERDTree to open in a new tab you can do Ctrl + t or Ctrl + T
 
 
