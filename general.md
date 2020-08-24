@@ -97,5 +97,7 @@ For vimrc for nerdtree :
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
+To switch from a window to another one use Ctrl+W and then the arrow keys.
+
 
 
