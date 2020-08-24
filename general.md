@@ -113,7 +113,8 @@ m: Show the NERD Tree menu
 
 - For navigation between tabs and windows : 
 
-To navigate between windows 
+To navigate between windows
+
 Ctrl+W and then the arrow keys.
 
 To navigate between tabs :
