@@ -79,4 +79,16 @@ grub> boot
 
 ## About VIM Plugins
 
-- I really recommend 
+- I use the package manager included in VIM8+ and git system to save plugins.
+
+- What is mandatory for plugin hosting is a folder /home/username/.vim/pack/
+
+- At this level it's possible to create forlders to sort plugins : basic, python, coloring, markdown.
+
+- In each group will be a folder start and a folder opt.
+
+- In each of these folders will be a folder containg the content of the git repo (just do git clone in the start or opt folder)
+
+- In VIM, with this command :packadd {name} it's possible to activate the plugins located in opt folder
+
+- Even if a plugin is well in the start folder, you have to edit the vimrc file and to add it "autocmd VimEnter * NERDTree"
