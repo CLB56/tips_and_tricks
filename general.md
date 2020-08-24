@@ -105,6 +105,7 @@ s: Open the selected file in a vertical split window
 I: Toggle hidden files
 m: Show the NERD Tree menu
 
+
 - For navigation between tabs and windows : 
 
 To navigate between windows 
@@ -115,6 +116,7 @@ To navigate between tabs :
 :tabp         go to previous tab
 :tabfirst     go to first tab
 :tablast      go to last tab
+
 
 
 
