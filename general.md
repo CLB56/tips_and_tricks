@@ -130,7 +130,7 @@ To navigate between tabs :
 
 - PLUGIN surround : No issue for installation. No need to modify vimrc. But in normal mode, use cs "the former quotes" "the new quote" without semi colons. for example cs"' and not :cs"'
 
-- PLUGIN syntastic : I cloned the github in the start folder. Then sudo apt install python3-pip the i installed the spellchecker (from the openstack team) bandit pip3 install bandit.
+- PLUGIN syntastic : I cloned the github in the start folder. Then sudo apt install python3-pip the i installed the spellchecker (from the openstack team) bandit pip3 install bandit. i CAN T MAKE IT WORKING!
 
 - Folding functions and class : it doesn't wrok well but this code in the vimrc works a bit :
    " Enable folding of Class and Methods for Python
