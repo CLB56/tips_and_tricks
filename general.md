@@ -136,13 +136,15 @@ To navigate between tabs :
    " Enable folding of Class and Methods for Python
    set foldmethod=indent
    set foldlevel=99
+  Faut il un plugin pour bien réaliser cette fonction ?? 
+   
+- PLUGIN youcompleteme : Facile à installer. Se charge bien au démarrage. Mais il faut lire la doc car il y a une hstoir de serveur ycmd
 
+- PLUGIN Vim-colors-solarized : C'est pour améliorer la coloration du texte. Pas encore testé
 
-Youcompleteme : oui car ce sera utile pour le code completion 
-Vim-colors-solarized : C'est pour améliorer la coloration du texte. Mais la coloration par défaut de VIM est pas si mal.
-Un code folder pour regrouper les fonctions et classes rapidement
-Un moyen d'acceder à la documentation intégrée à la documentation facilement depuis vim (a voir si :!pydoc python_method_or_class is not enough)
-Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
+- Un code folder pour regrouper les fonctions et classes rapidement. Un moyen d'acceder à la documentation intégrée à la documentation facilement depuis vim (a voir si :!pydoc python_method_or_class is not enough). C'est pas vraiment essentiel.
+
+- Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
 On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
 
 
