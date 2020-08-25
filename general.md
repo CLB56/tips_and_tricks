@@ -131,7 +131,12 @@ To navigate between tabs :
 
 - PLUGIN syntastic : I cloned the github in the start folder. Then sudo apt install python3-pip the i installed the spellchecker (from the openstack team) bandit pip3 install bandit.
 
-Syntastic: c'est un vérificateur de syntaxe qui met un point rouge ou jaune selon la graivté de la faute. Il couvre plein de langages.
+- Folding functions and class : it doesn't wrok well but this code in the vimrc works a bit :
+   " Enable folding of Class and Methods for Python
+   set foldmethod=indent
+   set foldlevel=99
+
+
 Youcompleteme : oui car ce sera utile pour le code completion 
 Vim-colors-solarized : C'est pour améliorer la coloration du texte. Mais la coloration par défaut de VIM est pas si mal.
 Un code folder pour regrouper les fonctions et classes rapidement
