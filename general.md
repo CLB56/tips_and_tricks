@@ -93,7 +93,7 @@ grub> boot
 
 - Even if a plugin is well in the start folder, you have to edit the vimrc file and to add it "autocmd VimEnter * NERDTree"
 
-- NERDTree is useless just open the desired folder with vim and then :
+- PLUGIN NERDTree is useless just open the desired folder with vim and then :
 
 t: Open the selected file in a new tab
 
@@ -123,12 +123,16 @@ To navigate between tabs :
 
 \:tablast      go to last tab
 
-- NERDcommenter seems useless. If you want to comment several lines in one time there are some vim scripts (or regex i don't know) for that. for exemple 1,3s/^/# to comment the line 1 to 3 or :1,3s/^#/ to uncomment them.
+- PLUGIN NERDcommenter seems useless. If you want to comment several lines in one time there are some vim scripts (or regex i don't know) for that. for exemple 1,3s/^/# to comment the line 1 to 3 or :1,3s/^#/ to uncomment them.
+
+- PLUGIN vim-airline : No issue for installation. No need to modify vimrc
+
+- PLUGIN surround : No issue for installation. No need to modify vimrc. But in normal mode, use cs "the former quotes" "the new quote" without semi colons. for example cs"' and not :cs"'
+
+- PLUGIN syntastic : I cloned the github in the start folder. Then sudo apt install python3-pip the i installed the spellchecker (from the openstack team) bandit pip3 install bandit.
 
 Syntastic: c'est un vérificateur de syntaxe qui met un point rouge ou jaune selon la graivté de la faute. Il couvre plein de langages.
 Youcompleteme : oui car ce sera utile pour le code completion 
-Surround is a pluging to quicly change "" for '' or any other surrounding set of characters
-Vimairline : C'est la barre de tache en bas. J'en vois pas beaucoup d'interet mais ca peut préciser le virtual environnement et ca peut dire dans quelle branche git on se trouve (en fait cela interagit avec un plugin pour les virten et un plugin "fugitive" pour une integration git). Ce sera plus visuel pour savoir dans quel mode on est.
 Vim-colors-solarized : C'est pour améliorer la coloration du texte. Mais la coloration par défaut de VIM est pas si mal.
 Un code folder pour regrouper les fonctions et classes rapidement
 Un moyen d'acceder à la documentation intégrée à la documentation facilement depuis vim (a voir si :!pydoc python_method_or_class is not enough)
