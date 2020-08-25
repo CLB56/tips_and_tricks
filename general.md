@@ -125,11 +125,16 @@ To navigate between tabs :
 
 - NERDcommenter seems useless. If you want to comment several lines in one time there are some vim scripts (or regex i don't know) for that. for exemple 1,3s/^/# to comment the line 1 to 3 or :1,3s/^#/ to uncomment them.
 
-Syntastic on dit oui : c'est un vérificateur de syntaxe qui met un point rouge ou jaune selon la graivté de la faute. Il couvre plein de langages.
+Syntastic: c'est un vérificateur de syntaxe qui met un point rouge ou jaune selon la graivté de la faute. Il couvre plein de langages.
 Youcompleteme : oui car ce sera utile pour le code completion 
 Surround is a pluging to quicly change "" for '' or any other surrounding set of characters
-Vimairline : C'est la barre de tache en bas. J'en vois pas beaucoup d'interet mais ca peut préciser le virtual environnement et ca peut dire dans quelle branche git on se trouve (en fait cela interagit avec un plugin pour les virten et un plugin "fugitive" pour une integration git)
+Vimairline : C'est la barre de tache en bas. J'en vois pas beaucoup d'interet mais ca peut préciser le virtual environnement et ca peut dire dans quelle branche git on se trouve (en fait cela interagit avec un plugin pour les virten et un plugin "fugitive" pour une integration git). Ce sera plus visuel pour savoir dans quel mode on est.
 Vim-colors-solarized : C'est pour améliorer la coloration du texte. Mais la coloration par défaut de VIM est pas si mal.
+Un code folder pour regrouper les fonctions et classes rapidement
+Un moyen d'acceder à la documentation intégrée à la documentation facilement depuis vim (a voir si :!pydoc python_method_or_class is not enough)
+Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
+On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
+
 
 
 
