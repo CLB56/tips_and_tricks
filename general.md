@@ -103,6 +103,7 @@ s: Open the selected file in a vertical split window
 
 I: Toggle hidden files
 
+It's also possible to create symbolic links to get access to other folders from the tree without changing the root folder fo the Tree.
 
 - For navigation between tabs and windows management : 
 
