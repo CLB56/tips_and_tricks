@@ -93,7 +93,7 @@ grub> boot
 
 - Even if a plugin is well in the start folder, you have to edit the vimrc file and to add it "autocmd VimEnter * NERDTree"
 
-- PLUGIN NERDTree is useless just open the desired folder with vim and then :
+- Enering vim folder_path will open netrw (vim built-in file explorer)...But the PLUGIN NERDTree is much more conveineint (collapse/fold folders) : 
 
 t: Open the selected file in a new tab
 
