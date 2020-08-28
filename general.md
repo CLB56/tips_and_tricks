@@ -142,6 +142,8 @@ To navigate between tabs :
 
 - PLUGIN Vim-colors-solarized : C'est pour améliorer la coloration du texte. Pas encore testé
 
+- I wonder wether any "colorization" plugin is usefull as it seems that it could be possible to play with syntax highlighting (:h syn) and conceallevel=2 to apply a special style (color and font) to some patterns. If you open a file with the extension .md vim with conceallevel=2, vim will apply default rules to markdown (for bold and italic it works well).
+
 - Un code folder pour regrouper les fonctions et classes rapidement. Un moyen d'acceder à la documentation intégrée à la documentation facilement depuis vim (a voir si :!pydoc python_method_or_class is not enough). C'est pas vraiment essentiel.
 
 - Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
