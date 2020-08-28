@@ -150,5 +150,8 @@ To navigate between tabs :
 On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
 
 
+Super lien pour appliquer des politiques différentes selon le filetype : 
+https://vim.works/2019/04/02/per-filetype-commands/
+
 
 
