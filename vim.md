@@ -79,10 +79,18 @@ But is this plugin really usefull ?
 - Copy the recommended text to vimrc AT THE END of vimrc
 - In the bash you can keep the system theme but you miust change the set of colors (pallette de couleurs in french) to solarized!
 
-Is it really better than the builtin color scheme ? it could be possible to play with syntax highlighting (:h syn) and conceallevel=2 to apply a special style (color and font) to some patterns.
+BUT, Is it really better than the builtin color scheme ? 
+There are some features for syntax highlighting (:h syn). If the parameter conceallevel=2 then it will be fully applied.
+It seems that just setting in vimrc the 2 parameters below could be good enough : 
+syntax on (if it's not enbaled by default)
+set background=dark
+
 
 Furthermore, it's possible to speicfu rules for specific extensions : 
 https://vim.works/2019/04/02/per-filetype-commands/
+
+
+
 
 # PLUGIN youcompleteme
 
