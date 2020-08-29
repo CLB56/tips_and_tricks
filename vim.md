@@ -62,6 +62,8 @@ It seems useless. If you want to comment several lines in one time there are som
 
 No issue for installation. No need to modify vimrc. But in normal mode, use cs "the former quotes" "the new quote" without semi colons. for example cs"' and not :cs"'
 
+But is this plugin really usefull ?
+
 # PLUGIN syntastic
 
 - Installed with vundle
@@ -71,33 +73,29 @@ No issue for installation. No need to modify vimrc. But in normal mode, use cs "
 
 - Each time you save the file it updates the checker
 
+# PLUGIN vim-colors-solarized
+
+- Installation with vundle
+- Copy the recommended text to vimrc AT THE END of vimrc
+- In the bash you can keep the system theme but you miust change the set of colors (pallette de couleurs in french) to solarized!
+
+Is it really better than the builtin color scheme ? it could be possible to play with syntax highlighting (:h syn) and conceallevel=2 to apply a special style (color and font) to some patterns.
+
+Furthermore, it's possible to speicfu rules for specific extensions : 
+https://vim.works/2019/04/02/per-filetype-commands/
+
 # PLUGIN youcompleteme
 
 
 
 
-- Folding functions and class : it doesn't wrok well but this code in the vimrc works a bit :
-   " Enable folding of Class and Methods for Python
-   set foldmethod=indent
-   set foldlevel=99
-  Faut il un plugin pour bien réaliser cette fonction ?? 
-   
-- PLUGIN youcompleteme : Facile à installer. Se charge bien au démarrage. Mais il faut lire la doc car il y a une hstoir de serveur ycmd
-
-- PLUGIN Vim-colors-solarized : C'est pour améliorer la coloration du texte. Pas encore testé
-
-- I wonder wether any "colorization" plugin is usefull as it seems that it could be possible to play with syntax highlighting (:h syn) and conceallevel=2 to apply a special style (color and font) to some patterns. If you open a file with the extension .md vim with conceallevel=2, vim will apply default rules to markdown (for bold and italic it works well).
-
-- Un code folder pour regrouper les fonctions et classes rapidement. Un moyen d'acceder à la documentation intégrée à la documentation facilement depuis vim (a voir si :!pydoc python_method_or_class is not enough). C'est pas vraiment essentiel.
-
-- Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
-On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
 
 
-Super lien pour appliquer des politiques différentes selon le filetype : 
-https://vim.works/2019/04/02/per-filetype-commands/
+# To get the help of a python function
 
-- select and search for a text : 
+just write :python3 help(your function)
+
+# To select and search for a text 
 
 You can yank the hightlighted text first. Then
 
@@ -108,5 +106,20 @@ You can yank the hightlighted text first. Then
     "
 
 Which will paste what you have yanked after the /.
+
+
+- Folding functions and class : it doesn't wrok well but this code in the vimrc works a bit :
+   " Enable folding of Class and Methods for Python
+   set foldmethod=indent
+   set foldlevel=99
+  Faut il un plugin pour bien réaliser cette fonction ?? 
+   
+
+- Un code folder pour regrouper les fonctions et classes rapidement. Un moyen d'acceder à la documentation intégrée à la documentation facilement depuis vim (a voir si :!pydoc python_method_or_class is not enough). C'est pas vraiment essentiel.
+
+- Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
+On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
+
+
 
 
