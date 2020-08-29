@@ -143,4 +143,8 @@ On garde le chargement des module sans plugin managers mais il faut au moins sav
 lien vers un vimrc très complet : 
 https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
 
+it would be possible to enable a spell checker adding ths comment to vimrc : 
+set spell spelllang=en_us
+
+
 
