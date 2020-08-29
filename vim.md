@@ -67,7 +67,12 @@ No issue for installation. No need to modify vimrc. But in normal mode, use cs "
 - Installed with vundle
 - Copy the recommended text in vimrc
 - Sudo apt install flake8
-- Check the vim PATH (should be the same as the bash luanching it) : :echo syntastic#util#system('echo "$PATH"')
+- Check the vim PATH (should be the same as the bash launching vim) : :echo syntastic#util#system('echo "$PATH"')
+
+- Each time you save the file it updates the checker
+
+# PLUGIN youcompleteme
+
 
 
 
