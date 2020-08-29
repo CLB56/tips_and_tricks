@@ -25,8 +25,8 @@
    autocmd VimEnter * wincmd p
 
 - Usefull shortcuts :
-t \: Open the selected file in a new tab
-i \: Open the selected file in a horizontal split window
+t = Open the selected file in a new tab
+i = Open the selected file in a horizontal split window
 s \: Open the selected file in a vertical split window
 I \: Toggle hidden files
 
