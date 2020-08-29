@@ -25,10 +25,10 @@
    autocmd VimEnter * wincmd p
 
 - Usefull shortcuts :
-t : Open the selected file in a new tab
-i : Open the selected file in a horizontal split window
-s : Open the selected file in a vertical split window
-I : Toggle hidden files
+t \: Open the selected file in a new tab
+i \: Open the selected file in a horizontal split window
+s \: Open the selected file in a vertical split window
+I \: Toggle hidden files
 
 It's also possible to create symbolic links to get access to other folders from the tree without changing the root folder fo the Tree.
 
