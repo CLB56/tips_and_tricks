@@ -89,8 +89,19 @@ set background=dark
 Furthermore, it's possible to speicfu rules for specific extensions : 
 https://vim.works/2019/04/02/per-filetype-commands/
 
+Je crois vraiment que ce plugin ne sert à rien.
+" enable syntax highlighting
+syntax enable
+" enable all Python syntax highlighting features
+let python_highlight_all = 1
 
+Ce lien a l'air très bien et ne contient que l'essentiel:
+https://www.fullstackpython.com/vim.html
 
+# PLUGIN IndentLine
+
+As all tabs are turned into 4 spaces, a speical plugin is needed to display indentations.
+Easy installation with vundle.
 
 # PLUGIN youcompleteme
 
@@ -129,5 +140,7 @@ Which will paste what you have yanked after the /.
 On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
 
 
+lien vers un vimrc très complet : 
+https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
 
 
