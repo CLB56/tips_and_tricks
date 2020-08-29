@@ -79,19 +79,11 @@ grub> boot
 
 ## About VIM Plugins
 
-- I use the package manager included in VIM8+ and git system to save plugins.
+- I recommand using vundle. The package manager included in VIM8+ doesn't make installation of complicated plugins easy.
 
-- What is mandatory for plugin hosting is a folder /home/username/.vim/pack/
+- IF I WOULD USE THE NATIVE PLUGIN MANAGER : What is mandatory for plugin hosting is a folder /home/username/.vim/pack/ # At this level it's possible to create forlders to sort plugins : basic, python, coloring, markdown # In each group will be a folder start and a folder opt # In each of these folders will be a folder containg the content of the git repo (just do git clone in the start or opt folder) # In VIM, with this command :packadd {name} it's possible to activate the plugins located in opt folder
 
-- At this level it's possible to create forlders to sort plugins : basic, python, coloring, markdown.
-
-- In each group will be a folder start and a folder opt.
-
-- In each of these folders will be a folder containg the content of the git repo (just do git clone in the start or opt folder)
-
-- In VIM, with this command :packadd {name} it's possible to activate the plugins located in opt folder
-
-- Even if a plugin is well in the start folder, you have to edit the vimrc file and to add it "autocmd VimEnter * NERDTree"
+- You have to edit the vimrc file and to add it "autocmd VimEnter * NERDTree"
 
 - Enering vim folder_path will open netrw (vim built-in file explorer)...But the PLUGIN NERDTree is much more conveineint (collapse/fold folders) : 
 
@@ -130,7 +122,7 @@ To navigate between tabs :
 
 - PLUGIN surround : No issue for installation. No need to modify vimrc. But in normal mode, use cs "the former quotes" "the new quote" without semi colons. for example cs"' and not :cs"'
 
-- PLUGIN syntastic : I cloned the github in the start folder. Then sudo apt install python3-pip the i installed the spellchecker (from the openstack team) bandit pip3 install bandit. i CAN T MAKE IT WORKING!
+- PLUGIN syntastic : installed with vundle + copy the recommended text in vimrc + sudo apt install flake8 + check the vim PATH (should be the same as the bash luanching it) : :echo syntastic#util#system('echo "$PATH"')
 
 - Folding functions and class : it doesn't wrok well but this code in the vimrc works a bit :
    " Enable folding of Class and Methods for Python
@@ -153,5 +145,16 @@ On garde le chargement des module sans plugin managers mais il faut au moins sav
 Super lien pour appliquer des politiques différentes selon le filetype : 
 https://vim.works/2019/04/02/per-filetype-commands/
 
+- select and search for a text : 
+
+You can yank the hightlighted text first. Then
+
+    /
+
+    Ctrl + r
+
+    "
+
+Which will paste what you have yanked after the /.
 
 
