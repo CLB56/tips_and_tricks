@@ -1,20 +1,34 @@
-## About VIM Plugins
+# If you plan to use the built-in plugin manager (not recommended in 2020)
 
-- I recommand using vundle. The package manager included in VIM8+ doesn't make installation of complicated plugins easy.
+- What is mandatory for plugin hosting is a folder /home/username/.vim/pack/ 
 
-- IF I WOULD USE THE NATIVE PLUGIN MANAGER : What is mandatory for plugin hosting is a folder /home/username/.vim/pack/ # At this level it's possible to create forlders to sort plugins : basic, python, coloring, markdown # In each group will be a folder start and a folder opt # In each of these folders will be a folder containg the content of the git repo (just do git clone in the start or opt folder) # In VIM, with this command :packadd {name} it's possible to activate the plugins located in opt folder
+- At this level it's possible to create forlders to sort plugins : basic, python, coloring, markdown
 
-- You have to edit the vimrc file and to add it "autocmd VimEnter * NERDTree"
+- In each group will be a folder "start" and a folder "opt"
 
-- Enering vim folder_path will open netrw (vim built-in file explorer)...But the PLUGIN NERDTree is much more conveineint (collapse/fold folders) : 
+- In each of these folders will be a folder containg the content of the git repo (just do git clone in the start or opt folder)
 
-t: Open the selected file in a new tab
+- In VIM, with this command :packadd {name} it's possible to activate the plugins located in opt folder
 
-i: Open the selected file in a horizontal split window
+# If you plan to use vundle (recommanded)
 
-s: Open the selected file in a vertical split window
+- Installation is easy : clone the github repository as described in the README.md + paste the recommended text in .vimrc (comment the examples) + Run from vim ":PluginInstall"
 
-I: Toggle hidden files
+# NERDTree
+
+- NERDTree is much better that the buitin navigator "netrw" as it allows collapsing/expanding folders in a nice way.
+
+- In .vimrc add the lines : 
+   " Start NERDTree
+   autocmd VimEnter * NERDTree
+   " Jump to the main window.
+   autocmd VimEnter * wincmd p
+
+- Usefull shortcuts :
+t : Open the selected file in a new tab
+i : Open the selected file in a horizontal split window
+s : Open the selected file in a vertical split window
+I : Toggle hidden files
 
 It's also possible to create symbolic links to get access to other folders from the tree without changing the root folder fo the Tree.
 
