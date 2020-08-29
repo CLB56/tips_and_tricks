@@ -24,33 +24,27 @@
    " Jump to the main window.
    autocmd VimEnter * wincmd p
 
-- Usefull shortcuts 
+- Usefull shortcuts
+
 t = Open the selected file in a new tab
+
 i = Open the selected file in a horizontal split window
+
 s = Open the selected file in a vertical split window
+
 I = Toggle hidden files
 
-***
-t = Open the selected file in a new tab
-i = Open the selected file in a horizontal split window
-s \: Open the selected file in a vertical split window
-I \: Toggle hidden files
-***
+- Using symlinks can help to geat easy access to a separate folder (without changing the root folder fo the tree)
 
+- To navigate between windows
 
+Ctrl+W and then the arrow keys = navigate between windows
 
-It's also possible to create symbolic links to get access to other folders from the tree without changing the root folder fo the Tree.
+Ctrl+W +/- = increase/decrease height (play with figures to do big changes)
 
-- For navigation between tabs and windows management : 
+Ctrl+W >/< = increase/decrease width (play with figures to do big changes)
 
-To navigate between windows
-
-Ctrl+W and then the arrow keys.
-Ctrl+W +/-: increase/decrease height (play with figures to do big changes)
-Ctrl+W >/<: increase/decrease width (play with figures to do big changes)
-
-
-To navigate between tabs :
+- To navigate between tabs :
 
 \:tabn         go to next tab
 
@@ -60,13 +54,22 @@ To navigate between tabs :
 
 \:tablast      go to last tab
 
-- PLUGIN NERDcommenter seems useless. If you want to comment several lines in one time there are some vim scripts (or regex i don't know) for that. for exemple 1,3s/^/# to comment the line 1 to 3 or :1,3s/^#/ to uncomment them.
+# PLUGIN NERDcommenter
 
-- PLUGIN vim-airline : No issue for installation. No need to modify vimrc
+It seems useless. If you want to comment several lines in one time there are some vim scripts (or regex i don't know) for that. for exemple 1,3s/^/# to comment the line 1 to 3 or :1,3s/^#/ to uncomment them.
 
-- PLUGIN surround : No issue for installation. No need to modify vimrc. But in normal mode, use cs "the former quotes" "the new quote" without semi colons. for example cs"' and not :cs"'
+# PLUGIN surround 
 
-- PLUGIN syntastic : installed with vundle + copy the recommended text in vimrc + sudo apt install flake8 + check the vim PATH (should be the same as the bash luanching it) : :echo syntastic#util#system('echo "$PATH"')
+No issue for installation. No need to modify vimrc. But in normal mode, use cs "the former quotes" "the new quote" without semi colons. for example cs"' and not :cs"'
+
+# PLUGIN syntastic
+
+- Installed with vundle
+- Copy the recommended text in vimrc
+- Sudo apt install flake8
+- Check the vim PATH (should be the same as the bash luanching it) : :echo syntastic#util#system('echo "$PATH"')
+
+
 
 - Folding functions and class : it doesn't wrok well but this code in the vimrc works a bit :
    " Enable folding of Class and Methods for Python
