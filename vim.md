@@ -62,7 +62,11 @@ It seems useless. If you want to comment several lines in one time there are som
 
 No issue for installation. No need to modify vimrc. But in normal mode, use cs "the former quotes" "the new quote" without semi colons. for example cs"' and not :cs"'
 
-But is this plugin really usefull ?
+But is this plugin really usefull ? I think no.
+
+# PLUGIN Airline
+
+No issue for installation and useful.
 
 # PLUGIN syntastic
 
@@ -105,10 +109,16 @@ Easy installation with vundle.
 
 # PLUGIN youcompleteme
 
+Install plugin with vundle (takes several seconds)
+apt install build-essential cmake vim python3-dev
+cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --clang-completer
 
-
-
-
+It would have been possible to install more features but for that the README says just : Install mono-complete, go, node and npm
+I think it would be sudo apt install mono-complete (golang-go i think and not gccgo-go) nodejs npm
+then it's possible to launch : 
+python3 install.py --all
+But with just the clang-completer option i already have python3, C and C++. I don't need more.
 
 # To get the help of a python function
 
@@ -127,24 +137,33 @@ You can yank the hightlighted text first. Then
 Which will paste what you have yanked after the /.
 
 
-- Folding functions and class : it doesn't wrok well but this code in the vimrc works a bit :
-   " Enable folding of Class and Methods for Python
-   set foldmethod=indent
-   set foldlevel=99
-  Faut il un plugin pour bien réaliser cette fonction ?? 
-   
+# To fold functions and class
 
-- Un code folder pour regrouper les fonctions et classes rapidement. Un moyen d'acceder à la documentation intégrée à la documentation facilement depuis vim (a voir si :!pydoc python_method_or_class is not enough). C'est pas vraiment essentiel.
+Adding that to vimrc works with bugs : 
 
-- Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
-On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
+" Enable folding of Class and Methods for Python
+set foldmethod=indent
+set foldlevel=99
+
+But this is a feature i don't need. I always watch all functions. If folding is vital it menas that the code is bad.
+
+# How to get a debug mode
+
+############################################
+############################################
+############################################
 
 
-lien vers un vimrc très complet : 
-https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+# To use VIM as a spell checker
 
 it would be possible to enable a spell checker adding ths comment to vimrc : 
 set spell spelllang=en_us
 
 
 
+- Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
+On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
+
+
+# Link to a quite good vimrc for python
+https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
