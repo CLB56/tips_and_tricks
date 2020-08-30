@@ -85,6 +85,13 @@ No issue for installation and useful.
 
 - flake8 is well documented but is very severe (full respect of PEP8). To disable syntax message, you can write : 
 let g:syntastic_quiet_messages = { "type": "style" }
+to precise the checker you want to use you can add to your vimrc : 
+let g:syntastic_python_checkers=['flake8'] 
+But iy's mot mandatory if you install only one checker per filetype (means per file extension or language)
+That seems by far the best way to manage exceptions precisely : 
+let g:syntastic_python_flake8_args = '--ignore="E501"'
+
+
 
 # PLUGIN vim-colors-solarized
 
@@ -181,6 +188,16 @@ set spell spelllang=en_us
 select lines with "Shift + v"
 Then press "Ctrl + >" or "Ctrl + <"
 As usually it's possible to add a figure to do several identations at once
+
+# How to copy outside of VIM
+put in the vimrc
+set clipboard=unnamedplus "This allow the right click of the mouse to copy
+
+...But it's not enough.
+if you do in bash :
+vim --version
+xterm-clipboard is not installed with vim, you have to add manually
+sudo apt install vim-gtk
 
 
 - Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
