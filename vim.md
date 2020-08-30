@@ -170,6 +170,11 @@ sudo pip3 install pillow --upgrade
 it would be possible to enable a spell checker adding ths comment to vimrc : 
 set spell spelllang=en_us
 
+# To indent several lines as once
+
+select lines with "Shift + v"
+Then press "Ctrl + >" or "Ctrl + <"
+As usually it's possible to add a figure to do several identations at once
 
 
 - Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
