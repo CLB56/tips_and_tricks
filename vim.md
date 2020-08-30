@@ -77,6 +77,9 @@ No issue for installation and useful.
 
 - Each time you save the file it updates the checker
 
+- flake8 is well documented but is very severe (full respect of PEP8). To disable syntax message, you can write : 
+let g:syntastic_quiet_messages = { "type": "style" }
+
 # PLUGIN vim-colors-solarized
 
 - Installation with vundle
