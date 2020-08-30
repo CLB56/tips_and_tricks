@@ -44,6 +44,12 @@ Ctrl+W +/- = increase/decrease height (play with figures to do big changes)
 
 Ctrl+W >/< = increase/decrease width (play with figures to do big changes)
 
+- To swap or flip windows 
+
+If you have them split vertically "Ctrl + w" and then "J" to move one to the bottom
+
+If you have them split horizontally "Ctrl+ w" and then "L" to move one to the right
+
 - To navigate between tabs :
 
 \:tabn         go to next tab
