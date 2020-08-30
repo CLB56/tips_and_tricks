@@ -150,12 +150,20 @@ set foldlevel=99
 
 But this is a feature i don't need. I always watch all functions. If folding is vital it menas that the code is bad.
 
-# How to get a debug mode
+# How to run a python programm in VIM
 
-############################################
-############################################
-############################################
+to run a vim programm, just execute :
+:w !python3
 
+NB : to execute any bash command in VIM, we just have to do :!<UNIX command>
+
+The problem is that many libs are missing
+tkinter : 
+sudo apt-get install python3-tk
+Even if pillow is well installed, it can be impossible to import from PIL, ImageTk, so you should do :
+sudo apt-get install python-imaging-tk
+And then it's still not working, so we have to do : 
+sudo pip3 install pillow --upgrade
 
 # To use VIM as a spell checker
 
