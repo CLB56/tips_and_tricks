@@ -232,6 +232,7 @@ I didn't succeed to make working vim-ipdb (should probably try vim-pdb first)
 I well have an issue to run code conatining pdb.set_trace or ipdb.set_trace in vim.
 It works from bash but not in vim
 Let's be realistic, it's not acceptable. I need debug in vim.
+This issue happened suddenly after i played with vundle plugins list.
 
 
 I think vimspector really worth a try!!!
