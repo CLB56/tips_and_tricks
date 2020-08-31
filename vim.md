@@ -236,6 +236,8 @@ This issue happened suddenly after i played with vundle plugins list.
 
 
 I think vimspector really worth a try!!!
+NON vimspector c'est un leurre. Ca va etre galère à installer et c'est trop jeune.
+une bonne fenetre ipython debug dans vim ferait bien le taf et me serait plus formateur.
 
 
 
