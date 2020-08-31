@@ -205,7 +205,7 @@ There is a module called pdb which is dedicated to debugging.
 
 1st way of use : 
 import pdb in the source code of the programm
-add pdb.set_trace() ou breakpoint() where you want your programm to stop
+add pdb.set_trace() ou breakpoint() where you want your programm to stop (you can programm conditionnal stop if needed)
 then execute the code in bash python3 <path to your pogramm>
 
 next to go to the next line
@@ -220,9 +220,30 @@ No modification of the programm needed and enter next to run in step by step mod
 to get all possible commands : 
 https://docs.python.org/3/library/pdb.html
 
+I think we can get something more convenient so i install ipython with ipdb.
+sudo apt install ipython3
+sudo apt install python3-ipdb
 
-- Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
-On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
+with ipdb i can write the command below to display 5 lines around the breakpoint
+ipdb.set_trace(context=5)
+
+I didn't succeed to make working vim-ipdb (should probably try vim-pdb first)
+
+I well have an issue to run code conatining pdb.set_trace or ipdb.set_trace in vim.
+It works from bash but not in vim
+Let's be realistic, it's not acceptable. I need debug in vim.
+
+
+I think vimspector really worth a try!!!
+
+
+
+
+# PLUGIN vim-ipython-cell
+This plugin reproduce the bahviour of Jupyter notebook : code execution cell by cell.
+But i think i don't need it.
+I prefer writing the full code as it was an one-block entire programm and then paste it to jupyter html interface.
+
 
 
 # Link to a quite good vimrc for python
