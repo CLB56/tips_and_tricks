@@ -199,6 +199,27 @@ vim --version
 xterm-clipboard is not installed with vim, you have to add manually
 sudo apt install vim-gtk
 
+# How to debug python with vim
+
+There is a module called pdb which is dedicated to debugging.
+
+1st way of use : 
+import pdb in the source code of the programm
+add pdb.set_trace() ou breakpoint() where you want your programm to stop
+then execute the code in bash python3 <path to your pogramm>
+
+next to go to the next line
+continue to continue to the next breakpoint
+possibility to query variables
+"? a" provides help for a()
+
+2nd way to use it
+python3 -m pdb <path to your python programm>
+No modification of the programm needed and enter next to run in step by step mode
+
+to get all possible commands : 
+https://docs.python.org/3/library/pdb.html
+
 
 - Un moyen de debug existe en faisant des breakpoint puis en lisant le code avec ipython mais je n'ai pas compris vraiment comment faire.
 On garde le chargement des module sans plugin managers mais il faut au moins savoir comparer le clone du dernier package avec la version actuelle sur github
