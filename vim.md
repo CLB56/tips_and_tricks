@@ -91,6 +91,10 @@ But iy's mot mandatory if you install only one checker per filetype (means per f
 That seems by far the best way to manage exceptions precisely : 
 let g:syntastic_python_flake8_args = '--ignore="E501"'
 
+For json, install jsonlint WITH npm (not with apt)
+sudo npm -g install jsonlint
+
+
 
 
 # PLUGIN vim-colors-solarized
