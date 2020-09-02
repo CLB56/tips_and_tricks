@@ -272,6 +272,15 @@ Otherwise an import of a module just read the core code which will usually do no
 It's recommended to always ecxecute python modules like that : python3.X -m name_of_the_module
 It will avoid issues : PATH, rights, versions
 
+Here is an example for installation : 
+python3.6 -m pip install black --user 
+python3.6 -m black mon_fichier.py
+
+--user is just to installl at user level and not at system level
+
+This is good to get the basic installation.
+
+For any further package installation, tests, projects...I must use virtual_environnements.
 
 
 
