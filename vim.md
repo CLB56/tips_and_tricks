@@ -255,3 +255,26 @@ I prefer writing the full code as it was an one-block entire programm and then p
 
 # Link to a quite good vimrc for python
 https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+
+
+# Python -m 
+
+2 existing python module, 2 ways : 
+python3 <full_path_to_the_module.py>
+
+python3 -m module_name
+
+It will execute the module as "main" programm and so if the mdoule is well done execute the code located in
+if __name__ == "__main__":
+
+Otherwise an import of a module just read the core code which will usually do nothing except declaring variables, functions and class.
+
+It's recommended to always ecxecute python modules like that : python3.X -m name_of_the_module
+It will avoid issues : PATH, rights, versions
+
+
+
+
+
+
+
