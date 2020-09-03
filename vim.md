@@ -282,6 +282,28 @@ This is good to get the basic installation.
 
 For any further package installation, tests, projects...I must use virtual_environnements.
 
+Soit on execute avec python3
+
+Soit on execute directement avec ipython3 (c'est sous nom sous ubuntu). Mais il faut l'avoit installé avec apt et je prefererai faire tous mes package python avec pip3 (j'aurais que pip3 a installer avec apt).
+
+Mais sinon on peut executer avec python3 et importer Ipython dedans et on rentrera dans le ipdb des qu'on fera un ipdb.set_trace
+
+Mais le truc pas mal c'est d'executer avec python3 (on va privlégier ce scenario) puis de faire : 
+from IPython import embed; embed()
+
+Ca bloque la console ipython
+et ensuite on a acces a tous les mots magique et notamment %whos pour l'exploration de variable.
+ensuite Controle + D
+
+sinon dans ipdb on joue avec les set_trace()
+l pour afficher du code
+ll pour en afficher plus
+s pour step into a function
+n for next
+w to see where we are
+
+
+
 
 
 
