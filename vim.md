@@ -89,9 +89,9 @@ To uncomment the line 1 to 3 : 1,3s/^#/
 
 ## PLUGIN Surround  
 
-I think it's better to understand vim and to use regular experessions if one day i really have the need of automatizing the change of surrounding caracters (", ', <b>...)  
+I think it's better to understand vim and to use regular experessions if one day i really have the need of automatizing the change of surrounding caracters (", ', ...)  
 
-## PLUGIN vim-colors-solarize
+## PLUGIN vim-colors-solarized
 
 - Installation with vundle  
 - Copy the recommended text to vimrc *AT THE END* of vimrc  
