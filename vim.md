@@ -65,6 +65,14 @@ Indent serevral lines :
 select lines with v   
 Then press "Ctrl + >" or "Ctrl + <"  
 
+Manage folding : 
+zf : Fold the selected lines
+space bar : Remove the fold
+zc : Close a fold
+zo : Open the fold
+za : Toggle the fold
+zC, zO and zA : for all the folds
+
 ## NERDTree
 
 t = Open the selected file in a new tab  
@@ -105,8 +113,6 @@ Here also i think it can be done with good vim settings.
 With this setting : 
 set foldmethod=manual
 It's possible to fold/unfold code manually :
-Fold : you select text manually + zf
-Unfold : With the spacebar
 
 I can't use "set foldmethod=indent", as my identations are turned into 4 spaces (python standard).
 
