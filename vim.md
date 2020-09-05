@@ -107,9 +107,16 @@ But would not it be possible to use VIM embedded settings ? Below some ideas for
 
 ## PLUGIN to fold code  
 
-Here also i think it can be done with good vim settings. Here is a proposal :   
-set foldmethod=indent  
-set foldlevel=99  
+Here also i think it can be done with good vim settings.  
+With this setting : 
+set foldmethod=manual
+It's possible to fold/unfold code manually :
+Fold : you select text manually + zf
+Unfold : With the spacebar
+
+I can't use "set foldmethod=indent", as my identations are turned into 4 spaces (python standard).
+
+But with set foldmethod=expr, i could write regex for folding. It's the right way to do auto folding.
 
 # Specific for python developpement  
 
@@ -162,9 +169,6 @@ Let's be realistic, it's not acceptable. I need debug in vim.
 This issue happened suddenly after i played with vundle plugins list.
 
 
-I think vimspector really worth a try!!!
-NON vimspector c'est un leurre. Ca va etre galère à installer et c'est trop jeune.
-une bonne fenetre ipython debug dans vim ferait bien le taf et me serait plus formateur.
 
 
 
