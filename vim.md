@@ -58,11 +58,11 @@ n : Search forward
 N : Search backward
 
 Use the spellchecker :   
-set spell spelllang=en_us
+set spell spelllang=en_us  
 zG : To ignore this word
 
 Indent serevral lines : 
-select lines with v  
+select lines with v   
 Then press "Ctrl + >" or "Ctrl + <"  
 
 ## NERDTree
