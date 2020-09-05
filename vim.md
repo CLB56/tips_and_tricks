@@ -97,13 +97,7 @@ I think it's better to understand vim and to use regular experessions if one day
 - Copy the recommended text to vimrc *AT THE END* of vimrc  
 - In the bash settings, you can keep the system theme but you must change the set of colors (pallette de couleurs in french) to solarized!  
 
-But would not it be possible to use VIM embedded settings ? Below some ideas for improvement :  
-- There are some features for syntax highlighting (:h syn). If the parameter conceallevel=2 then it will be fully applied.  
-- Adding "syntax on" in vimrc  
-- Adding "set background=dark"  
-- Adding this file "~/.vim/ftplugin/markdown.vim" and in markdown.vim set specific parameters for markdown "setlocal textwidth=120"  
-- syntax enable  
-- let python_highlight_all = 1  
+But default colorization is nice..and I can change graphically the background color of the bash in preferences.
 
 ## PLUGIN to fold code  
 
