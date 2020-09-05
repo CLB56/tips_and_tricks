@@ -61,7 +61,7 @@ Use the spellchecker :
 set spell spelllang=en_us  
 zG : To ignore this word
 
-Indent serevral lines : 
+Indent serevral lines :  
 select lines with v   
 Then press "Ctrl + >" or "Ctrl + <"  
 
@@ -91,7 +91,7 @@ To uncomment the line 1 to 3 : 1,3s/^#/
 
 I think it's better to understand vim and to use regular experessions if one day i really have the need of automatizing the change of surrounding caracters (", ', <b>...)  
 
-## PLUGIN vim-colors-solarized
+## PLUGIN vim-colors-solarize
 
 - Installation with vundle  
 - Copy the recommended text to vimrc *AT THE END* of vimrc  
