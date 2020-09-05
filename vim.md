@@ -34,94 +34,94 @@ _NB : I have only C, C++, Python syntax checking. it seems it's possible to get 
 
 ## VIM General
 
-Navigate between windows :
+Navigate between windows :  
 Ctrl+W and then the arrow keys
 
-Increase/decrease height of a window
+Increase/decrease height of a window :  
 Ctrl+W and then +/- (you can add figure before +/- for bigger change)
 
-Increase/decrease width of a window
+Increase/decrease width of a window :  
 Ctrl+W and then >/< (you can add figure before +/- for bigger change)
 
-Move a window in a given direction
+Move a window in a given direction :  
 Ctrl + w and then K (higher) or J (lower) or L (to the left) or R (to the right)
 
-Go to next tab
+Go to next tab :  
 :tabn         
 
-Go to previous tab
+Go to previous tab :  
 :tabp
 
-Search for text
+Search for text :  
 / + the text you search for
 n : Search forward
 N : Search backward
 
-Use the spellchecker : 
+Use the spellchecker :   
 set spell spelllang=en_us
 zG : To ignore this word
 
 Indent serevral lines : 
-select lines with v
-Then press "Ctrl + >" or "Ctrl + <"
+select lines with v  
+Then press "Ctrl + >" or "Ctrl + <"  
 
 ## NERDTree
 
-t = Open the selected file in a new tab
+t = Open the selected file in a new tab  
 
-i = Open the selected file in a horizontal split window
+i = Open the selected file in a horizontal split window  
 
-s = Open the selected file in a vertical split window
+s = Open the selected file in a vertical split window  
 
-I = Toggle hidden files
+I = Toggle hidden files  
 
-Using symlinks can help to geat easy access to a separate folder (without changing the root folder of the tree)
+Using symlinks can help to geat easy access to a separate folder (without changing the root folder of the tree)  
 
-# Opinion about other plugins
+# Opinion about other plugins  
 
-## PLUGIN NERDcommenter
+## PLUGIN NERDcommenter  
 
-I think it's better to understand vim and to use regular experessions if one day i really have the need of automatizing commenting/uncommenting.
+I think it's better to understand vim and to use regular experessions if one day i really have the need of automatizing commenting/uncommenting.  
 
-For python regex would be like that : 
+For python regex would be like that :  
 To comment the line 1 to 3 : 1,3s/^/#  
-To uncomment the line 1 to 3 : 1,3s/^#/
+To uncomment the line 1 to 3 : 1,3s/^#/  
 
-## PLUGIN Surround 
+## PLUGIN Surround  
 
-I think it's better to understand vim and to use regular experessions if one day i really have the need of automatizing the change of surrounding caracters (", ', <b>...)
+I think it's better to understand vim and to use regular experessions if one day i really have the need of automatizing the change of surrounding caracters (", ', <b>...)  
 
 ## PLUGIN vim-colors-solarized
 
-- Installation with vundle
-- Copy the recommended text to vimrc **AT THE END** of vimrc
-- In the bash settings, you can keep the system theme but you must change the set of colors (pallette de couleurs in french) to solarized!
+- Installation with vundle  
+- Copy the recommended text to vimrc **AT THE END** of vimrc  
+- In the bash settings, you can keep the system theme but you must change the set of colors (pallette de couleurs in french) to solarized!  
 
-But would not it be possible to use VIM embedded settings ? Below some ideas for improvement : 
-- There are some features for syntax highlighting (:h syn). If the parameter conceallevel=2 then it will be fully applied.
-- Adding "syntax on" in vimrc
-- Adding "set background=dark"
-- Adding this file "~/.vim/ftplugin/markdown.vim" and in markdown.vim set specific parameters for markdown "setlocal textwidth=120"
-- syntax enable
-- let python_highlight_all = 1
+But would not it be possible to use VIM embedded settings ? Below some ideas for improvement :  
+- There are some features for syntax highlighting (:h syn). If the parameter conceallevel=2 then it will be fully applied.  
+- Adding "syntax on" in vimrc  
+- Adding "set background=dark"  
+- Adding this file "~/.vim/ftplugin/markdown.vim" and in markdown.vim set specific parameters for markdown "setlocal textwidth=120"  
+- syntax enable  
+- let python_highlight_all = 1  
 
-## PLUGIN to fold code
+## PLUGIN to fold code  
 
-Here also i think it cna be done with good vim settings. Here is a proposal : 
-set foldmethod=indent
-set foldlevel=99
+Here also i think it can be done with good vim settings. Here is a proposal :   
+set foldmethod=indent  
+set foldlevel=99  
 
-# Specific for python developpement
+# Specific for python developpement  
 
-## To get the help of a python function
+## To get the help of a python function  
 
-:python3 help(your function)
+:python3 help(your function)  
 
-The problem is that many libs are missing
+The problem is that many libs are missing  
 tkinter : 
-sudo apt-get install python3-tk
-Even if pillow is well installed, it can be impossible to import from PIL, ImageTk, so you should do :
-sudo apt-get install python-imaging-tk
+sudo apt-get install python3-tk  
+Even if pillow is well installed, it can be impossible to import from PIL, ImageTk, so you should do :  
+sudo apt-get install python-imaging-tk  
 And then it's still not working, so we have to do : 
 sudo pip3 install pillow --upgrade
 
