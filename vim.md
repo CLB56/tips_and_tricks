@@ -66,12 +66,12 @@ select lines with v
 Then press "Ctrl + >" or "Ctrl + <"  
 
 Manage folding : 
-zf : Fold the selected lines
-space bar : Remove the fold
-zc : Close a fold
-zo : Open the fold
-za : Toggle the fold
-zC, zO and zA : for all the folds
+zf : Fold the selected lines  
+space bar : Remove the fold  
+zc : Close a fold  
+zo : Open the fold  
+za : Toggle the fold  
+zC, zO and zA : for all the folds  
 
 ## NERDTree
 
