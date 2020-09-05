@@ -94,7 +94,7 @@ I think it's better to understand vim and to use regular experessions if one day
 ## PLUGIN vim-colors-solarized
 
 - Installation with vundle  
-- Copy the recommended text to vimrc **AT THE END** of vimrc  
+- Copy the recommended text to vimrc *AT THE END* of vimrc  
 - In the bash settings, you can keep the system theme but you must change the set of colors (pallette de couleurs in french) to solarized!  
 
 But would not it be possible to use VIM embedded settings ? Below some ideas for improvement :  
