@@ -105,7 +105,7 @@ I think it's better to understand vim and to use regular experessions if one day
 - Copy the recommended text to vimrc *AT THE END* of vimrc  
 - In the bash settings, you can keep the system theme but you must change the set of colors (pallette de couleurs in french) to solarized!  
 
-But default colorization is nice..and I can change graphically the background color of the bash in preferences.
+But default colorization and highlighting is nice..and I can change graphically the background color of the bash in the preferences.
 
 ## PLUGIN to fold code  
 
@@ -122,16 +122,41 @@ But with set foldmethod=expr, i could write regex for folding. It's the right wa
 
 ## To get the help of a python function  
 
-:python3 help(your function)  
+:python3 help(your function)
 
-The problem is that many libs are missing  
-tkinter : 
+## Installing packages pip and apt
+
+If you install with apt the package will be installed in "/usr/lib/python3.X/tkinter"
+
+If you install with pip3 the package will be installed in ~/.local/bin/. 
+
+And that's good because files installed outside of /home/ must be tracked by apt!
+
+I think i will use apt most of the time and pip only when i need to do a virtenv with special libraries.
+
+## Executing a module
+
+2 existing python module, ther are 2 possibilities :  
+- python3 <full_path_to_the_module.py>
+- python3 -m module_name
+
+It will execute the module as "main" programm and so if the mdoule is well done execute the code located in 'if __name__ == "__main__"'.
+
+Otherwise an import of a module just read the core code which will usually do nothing except declaring variables, functions and class.
+
+## Installing with pip without any mistake   (PATHS, python version, rights...)
+
+python3.6 -m pip install black (--user really needed ?)   
+
+## Small issues to run floupy program 
+
+I installed tkinter in wide-system :  
 sudo apt-get install python3-tk  
-Even if pillow is well installed, it can be impossible to import from PIL, ImageTk, so you should do :  
-sudo apt-get install python-imaging-tk  
-And then it's still not working, so we have to do : 
-sudo pip3 install pillow --upgrade
 
+
+pillow was already installed but it was impossible to import it. So I run :   
+sudo pip3 install pillow --upgrade  
+It's not ideal as i don't know. I would have preferred to use pip only in virtenvs.
 
 # How to debug python with vim
 
@@ -173,35 +198,12 @@ This issue happened suddenly after i played with vundle plugins list.
 
 
 
-# PLUGIN vim-ipython-cell
-This plugin reproduce the bahviour of Jupyter notebook : code execution cell by cell.
-But i think i don't need it.
-I prefer writing the full code as it was an one-block entire programm and then paste it to jupyter html interface.
-
-
 
 # Link to a quite good vimrc for python
 https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
 
 
-# Python -m 
 
-2 existing python module, 2 ways : 
-python3 <full_path_to_the_module.py>
-
-python3 -m module_name
-
-It will execute the module as "main" programm and so if the mdoule is well done execute the code located in
-if __name__ == "__main__":
-
-Otherwise an import of a module just read the core code which will usually do nothing except declaring variables, functions and class.
-
-It's recommended to always ecxecute python modules like that : python3.X -m name_of_the_module
-It will avoid issues : PATH, rights, versions
-
-Here is an example for installation : 
-python3.6 -m pip install black --user 
-python3.6 -m black mon_fichier.py
 
 --user is just to installl at user level and not at system level
 
