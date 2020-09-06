@@ -54,6 +54,19 @@ set splitright
 " Allow manual folding
 set foldmethod=manual
 
+" Highlight search results
+set hlsearch
+
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Enable filetype plugins (~/.vim/after/ftplugin/html.vim and use setlocal)
+filetype plugin on
+filetype indent on
+
+" Enable mouse
+set mouse=a
+
 """"""""""""""""""""
 " Airline Settings "
 """"""""""""""""""""
