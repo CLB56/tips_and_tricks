@@ -153,84 +153,32 @@ python3.6 -m pip install black (--user really needed ?)
 I installed tkinter in wide-system :  
 sudo apt-get install python3-tk  
 
-
 pillow was already installed but it was impossible to import it. So I run :   
 sudo pip3 install pillow --upgrade  
 It's not ideal as i don't know. I would have preferred to use pip only in virtenvs.
 
 # How to debug python with vim
 
-There is a module called pdb which is dedicated to debugging.
-
-1st way of use : 
-import pdb in the source code of the programm
-add pdb.set_trace() ou breakpoint() where you want your programm to stop (you can programm conditionnal stop if needed)
-then execute the code in bash python3 <path to your pogramm>
-
-next to go to the next line
-continue to continue to the next breakpoint
-possibility to query variables
-"? a" provides help for a()
-
-2nd way to use it
-python3 -m pdb <path to your python programm>
-No modification of the programm needed and enter next to run in step by step mode
-
-to get all possible commands : 
-https://docs.python.org/3/library/pdb.html
-
-I think we can get something more convenient so i install ipython with ipdb.
-sudo apt install ipython3
+sudo apt install python3-ipython
 sudo apt install python3-ipdb
 
-with ipdb i can write the command below to display 5 lines around the breakpoint
-ipdb.set_trace(context=5)
+I don't recommend to run the programm from VIM. It's better to launch a terminal.
 
-I didn't succeed to make working vim-ipdb (should probably try vim-pdb first)
-
-I well have an issue to run code conatining pdb.set_trace or ipdb.set_trace in vim.
-It works from bash but not in vim
-Let's be realistic, it's not acceptable. I need debug in vim.
-This issue happened suddenly after i played with vundle plugins list.
-
-
-
-
-
-
-
-# Link to a quite good vimrc for python
-https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
-
-
-
-
---user is just to installl at user level and not at system level
-
-This is good to get the basic installation.
-
-For any further package installation, tests, projects...I must use virtual_environnements.
-
-Soit on execute avec python3
-
-Soit on execute directement avec ipython3 (c'est sous nom sous ubuntu). Mais il faut l'avoit installé avec apt et je prefererai faire tous mes package python avec pip3 (j'aurais que pip3 a installer avec apt).
-
-Mais sinon on peut executer avec python3 et importer Ipython dedans et on rentrera dans le ipdb des qu'on fera un ipdb.set_trace
-
-Mais le truc pas mal c'est d'executer avec python3 (on va privlégier ce scenario) puis de faire : 
-from IPython import embed; embed()
-
-Ca bloque la console ipython
-et ensuite on a acces a tous les mots magique et notamment %whos pour l'exploration de variable.
-ensuite Controle + D
-
-sinon dans ipdb on joue avec les set_trace()
+Shortucts in ipdb shell : 
 l pour afficher du code
 ll pour en afficher plus
 s pour step into a function
 n for next
 w to see where we are
+continue to continue to the next breakpoint
+"? a" provides help for a()
 
+To create a breakpoint with ipdb and get access to the step by step mode :  
+ipdb.set_trace(context=5)
+
+To create a breakpoint with ipython (it gives access to magic words - %lsmagic -  but it's not step by step):  
+from IPython import embed; embed()  
+Then Ctrl + D to resume the program
 
 # If you plan to use the built-in plugin manager (not recommended in 2020)
 
