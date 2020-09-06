@@ -180,9 +180,9 @@ Then Ctrl + D to resume the program
 To create a breakpoint with ipdb and get access to the step by step mode :  
 ipdb.set_trace(context=5)
 
-To open the terminal in a vertical split (and get the source code and the debugging console in the same screen)
+To open the terminal in a vertical split (and get the source code and the debugging console in the same screen)  
 :vert term  
-To come back to a vim buffer without exiting the terminal, i didn't find anu other solution that to enable the mouse  
+To come back to a vim buffer without exiting the terminal, i didn't find any other solution that to enable the mouse  
 
 Once in ipdb shell, execute the code till the next embed(), to come back to ipython shell.
 
