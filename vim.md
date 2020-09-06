@@ -173,12 +173,15 @@ w to see where we are
 continue to continue to the next breakpoint
 "? a" provides help for a()
 
-To create a breakpoint with ipdb and get access to the step by step mode :  
-ipdb.set_trace(context=5)
-
 To create a breakpoint with ipython (it gives access to magic words - %lsmagic -  but it's not step by step):  
 from IPython import embed; embed()  
 Then Ctrl + D to resume the program
+
+To create a breakpoint with ipdb and get access to the step by step mode :  
+ipdb.set_trace(context=5)
+
+To open the terminal in a vertical split (and get the source code and the debugging console in the same screen)
+:vert term
 
 # If you plan to use the built-in plugin manager (not recommended in 2020)
 
@@ -191,9 +194,3 @@ Then Ctrl + D to resume the program
 - In each of these folders will be a folder containg the content of the git repo (just do git clone in the start or opt folder)
 
 - In VIM, with this command :packadd {name} it's possible to activate the plugins located in opt folder
-
-
-
-
-
-
