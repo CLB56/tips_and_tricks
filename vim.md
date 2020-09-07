@@ -186,6 +186,15 @@ To come back to a vim buffer without exiting the terminal, i didn't find any oth
 
 Once in ipdb shell, execute the code till the next embed(), to come back to ipython shell.
 
+# Use vim for markdown
+
+No customization required.
+
+Use pandoc for vizualization.
+
+sudo apt install libjs-mathjax
+pandoc -f markdown -t html -c github.css -s --mathjax --metadata pagetitle="my_title" -o <path_to_output_file.html> input_file.md
+
 # If you plan to use the built-in plugin manager (not recommended in 2020)
 
 - What is mandatory for plugin hosting is a folder /home/username/.vim/pack/ 
