@@ -226,6 +226,11 @@ But the drawback is that to change the line, 2 blanck spaces are needed.
 I get sometimes yellow highlighting of the same word. For that i execute :  
 :set nohl
 
+To navigate between wrapped lines, in visual mode : 
+g + j (or down key)
+gk + k (or up key)
+
+
 # If you plan to use the built-in plugin manager (not recommended in 2020)
 
 - What is mandatory for plugin hosting is a folder /home/username/.vim/pack/ 
