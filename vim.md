@@ -183,9 +183,9 @@ ipdb.set_trace(context=5)
 To open the terminal in a vertical split (and get the source code and the debugging console in the same screen)  
 :vert term  
 To come back to a vim buffer without exiting the terminal :  
-Ctrl + W (2 times)
-To allow copy and paste from the vim terminal : 
-set mouse=r
+Ctrl + W (2 times)  
+To allow copy and paste from the vim terminal :   
+set mouse=r  
 
 Once in ipdb shell, execute the code till the next embed(), to come back to ipython shell.
 
