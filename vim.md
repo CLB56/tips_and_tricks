@@ -221,7 +221,10 @@ Second Term
 : This is another definition of the second term.
 ~~~
 
-But the drawback is that to change the line, 2 blanck spaces are needed.
+But the drawback is that to change the line, 2 blanck spaces are needed.  
+
+I get sometimes yellow highlighting of the same word. For that i execute :  
+:set nohl
 
 # If you plan to use the built-in plugin manager (not recommended in 2020)
 
