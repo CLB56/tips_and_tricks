@@ -196,10 +196,30 @@ No customization required.
 Use pandoc for vizualization.  
 
 sudo apt install libjs-mathjax  
-pandoc -f markdown -t html -c github.css -s --mathjax --metadata pagetitle="my_title" -o <path_to_output_file.html> input_file.md
+pandoc -f commonmark -t html -c github.css -s --mathjax --metadata pagetitle="my_title" -o <path_to_output_file.html> input_file.md
 
 To display all markdown tags : 
 :set concealevel=0
+
+Pandoc markdown propose 2 additinnal interesting features :  
+
+Tables with alignement : 
+~~~
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
+~~~
+
+Definition lists : 
+~~~
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+~~~
 
 # If you plan to use the built-in plugin manager (not recommended in 2020)
 
