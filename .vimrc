@@ -44,6 +44,9 @@ set rnu
 " Show a visual line under the cursor's current line
 set cursorline
 
+" Not underline the curor's current line
+:hi CursorLine   cterm=NONE
+
 " Allow line change with arrows (<&> for normal mode, [&] for insert mode)
 set whichwrap+=<,>,[,]
 
