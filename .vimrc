@@ -35,8 +35,11 @@ set encoding=utf-8
 " Display line number
 set number
 
-"Display relative line number
+" Display relative line number
 set rnu
+
+" Change the color of the numbers
+:highlight LineNr ctermfg=blue
 
 " Show a visual line under the cursor's current line
 set cursorline
