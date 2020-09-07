@@ -221,6 +221,8 @@ Second Term
 : This is another definition of the second term.
 ~~~
 
+But the drawback is that to change the line, 2 blanck spaces are needed.
+
 # If you plan to use the built-in plugin manager (not recommended in 2020)
 
 - What is mandatory for plugin hosting is a folder /home/username/.vim/pack/ 
