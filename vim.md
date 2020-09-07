@@ -188,12 +188,15 @@ Once in ipdb shell, execute the code till the next embed(), to come back to ipyt
 
 # Use vim for markdown
 
-No customization required.
+No customization required.  
 
-Use pandoc for vizualization.
+Use pandoc for vizualization.  
 
-sudo apt install libjs-mathjax
+sudo apt install libjs-mathjax  
 pandoc -f markdown -t html -c github.css -s --mathjax --metadata pagetitle="my_title" -o <path_to_output_file.html> input_file.md
+
+To display all markdown tags : 
+:set concealevel=0
 
 # If you plan to use the built-in plugin manager (not recommended in 2020)
 
