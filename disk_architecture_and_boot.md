@@ -81,11 +81,11 @@ grub> boot
 
 1. Reading the block size and the volume size:
 
-[root@testserver ~]# isoinfo -d -i /dev/cdrom | grep -i -E 'block size|volume size' 
-Logical block size is: 2048
-Volume size is: 327867
+[root@testserver ~]# isoinfo -d -i /dev/cdrom | grep -i -E 'block size|volume size'   
+Logical block size is: 2048  
+Volume size is: 327867  
 
-2. Running dd with the parameters for block size and volume size:
+2. Running dd with the parameters for block size and volume size:  
 
 [root@testserver ~]# dd if=/dev/cdrom of=test.iso bs=<block size from above> count=<volume size from above>
 
