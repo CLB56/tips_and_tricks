@@ -228,7 +228,10 @@ I get sometimes yellow highlighting of the same word. For that i execute :
 
 To navigate between wrapped lines, in visual mode : 
 g + j (or down key)
-gk + k (or up key)
+g + k (or up key)
+
+To well retrive the last command in bash : 
+HISTCONTROL=erasedups
 
 
 # If you plan to use the built-in plugin manager (not recommended in 2020)
