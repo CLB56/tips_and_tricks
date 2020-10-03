@@ -196,7 +196,7 @@ No customization required.
 Use pandoc for vizualization.  
 
 sudo apt install libjs-mathjax  
-pandoc -f commonmark -t html -c github.css -s --mathjax --metadata pagetitle="my_title" -o <path_to_output_file.html> input_file.md
+pandoc -f markdown -t html -c github.css -s --mathjax --metadata pagetitle="my_title" -o <path_to_output_file.html> input_file.md
 
 To display all markdown tags : 
 :set concealevel=0
