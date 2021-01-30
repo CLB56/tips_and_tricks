@@ -1,52 +1,51 @@
 CrDroid non rooté
 
-Protonmail
-Signal
-KeepassDX
-Whats'app ??
-MS Outlook
-MS Teams
-Open Contact (permet import/Export csv)
-Contacts de l'AOSP
-Fair email (yahoo x2, Yandex, Laposte...Gmail impossible...Google refuse les clients tiers)
-New Pipe (pas le legacy!)
-VLC
-OSM~ (à chopper depuis FrDroid)
-Revolut
-Air B&B
-Oui sncf
-Air France
 Fr Droid
-Hello Bank
+KeepassDX
+Fair email (Yahoo, Yandex, Laposte...Gmail refuse les clients tiers)
+New Pipe (pas le legacy! - à aller chercher diretment sur le site)
+VLC
+OSM~
 Graph 89
 Open Camera
 Feeder (flux RSS)
 AntennaPOD (Podcast)
-MixPlorer
+MixPlorer (Directemnt depuis xda)
 Firefox
 Aurora Store
-Calendar Import/Export (pout les ICS)
-The Etar Project Calendar from AOSP
-Aard 2 avec le wiktionnaire russe à jour
+Aard 2 (Dictionnaires à rajouter)
 Termux
+Termux API
+Termux Widget
 Proton VPN
-Money Buster est pratique je trouve pour faire comme tricount
-Todo Agenda est bien pour faire un widget
-Lawnchair pour le lanceur
-
-Birthday Adapter !!
-
-Pour les contacts simple contact et peut etre même que je peux me passer open contact
-Pour les calendrier simple calendar
-
+Money Buster 
+Simple Contact
+Simple Calendar
+Lawnchair
 Libreoffice viewer
-Second screen pour le casting sur Tv par cable.
-Sharik pour le partage de fichier.
-Finder, je pense qu'on peut en faire qqch.
+Sharik
+Finder
+
+Protonmail
+Signal
+Whats'app
+MS Outlook
+MS Teams
+Revolut
+Air B&B
+Oui sncf
+Air France
+Hello Bank
+
 
 Virtualiser :
 Pour avoir les ports usb 2 et 3 il faut installer Oracle_VM_VirtualBox_Extension_Pack-6.1.16.vbox-extpack
 https://download.virtualbox.org/virtualbox
+
+Installer Odin et Drivers samsung sur Windows
+
+Charger BL, AP, CP, CSC et CSC contient le pit qui convient bien.
+
 
 
 
